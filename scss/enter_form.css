@@ -1,8 +1,12 @@
 .enter_form {
   float: right;
   width: 40%;
-  height: auto; }
-  .enter_form form {
-    margin: 0 auto; }
+  height: 100vh;
+  text-align: center;
+  line-height: 100vh; }
+  .enter_form .centered {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal; }
 
 /*# sourceMappingURL=enter_form.css.map */
