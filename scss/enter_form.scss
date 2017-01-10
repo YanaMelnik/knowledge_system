@@ -1,0 +1,13 @@
+.enter_form {
+  float: right;
+  width: 40%;
+  height: auto;
+
+  form {
+    margin: 0 auto; // почему не работает
+  }
+}
+
+body {
+  background: #aaa;  // почему не работает
+}
