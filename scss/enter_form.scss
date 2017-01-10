@@ -5,11 +5,18 @@
   text-align: center;
   line-height: 100vh;
   background-color: #3b5998;
+  font-size: 2em;
 
   .centered {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+  }
+
+  input {
+    width: 200px;
+    height: 30px;
+    box-sizing: border-box;
   }
 }
 

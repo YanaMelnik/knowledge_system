@@ -4,10 +4,15 @@
   height: 100vh;
   text-align: center;
   line-height: 100vh;
-  background-color: #3b5998; }
+  background-color: #3b5998;
+  font-size: 2em; }
   .enter_form .centered {
     display: inline-block;
     vertical-align: middle;
     line-height: normal; }
+  .enter_form input {
+    width: 200px;
+    height: 30px;
+    box-sizing: border-box; }
 
 /*# sourceMappingURL=enter_form.css.map */
