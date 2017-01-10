@@ -3,7 +3,8 @@
   width: 40%;
   height: 100vh;
   text-align: center;
-  line-height: 100vh; }
+  line-height: 100vh;
+  background-color: #3b5998; }
   .enter_form .centered {
     display: inline-block;
     vertical-align: middle;
