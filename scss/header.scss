@@ -1,0 +1,40 @@
+@import "mixin.scss";
+@media #{$table-widths} {
+  .main_nav, .head_nav {
+    width: auto;
+    min-height: 70px;
+    margin: 0;
+  }
+
+  .main_nav__wrapper, .head_nav__wrapper {
+    @include container;
+    @include clearfix;
+  }
+}
+
+.head_nav, .main_nav {
+  width: 100%;
+  background-color: #959997;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.head_nav::after {
+  display: block;
+  clear:both;
+
+}
+
+.logo {
+  float: left;
+  height: auto;
+  top: 1%;
+  left: 5%;
+}
+
+.profile{
+  float: right;
+}

@@ -1,0 +1,22 @@
+@import "variables.scss";
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin container {
+  width: 320px;
+  margin: 0 auto;
+
+  @media #{$table-widths} {
+    width: 640px;
+  }
+
+  @media #{$desktop-widths} {
+    width: 960px;
+  }
+}
