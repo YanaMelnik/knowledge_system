@@ -1,0 +1,20 @@
+@import "mixin.scss";
+
+.primary_information{
+  @include container;
+  box-sizing: border-box;
+  border: 1px solid red;
+
+  .primary_header{
+    text-align: center;
+  }
+
+  .primary_items{
+    box-sizing: border-box;
+    border: 1px solid red;
+    width: 100%;
+    padding: 2%;
+  }
+
+}
+

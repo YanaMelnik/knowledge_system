@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scsle=1">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../scss/header.css">
     <link rel="stylesheet" type="text/css" href="../scss/shirtCard.css">
+    <link rel="stylesheet" type="text/css" href="../scss/primaryInform.css">
     <link rel="stylesheet" type="text/css" href="../scss/scaffolding.css">
 </head>
 <body>
@@ -13,13 +15,19 @@
         <div class="head_nav">
             <div class="head_nav__wrapper">
                 <img src="" class="logo" alt="Logo of company">
-
+                <div class="profile">
+                    <img src="" class="profile_photo" id="profile_photo" alt="Your's photo">
+                    <ul class="profile_menu">
+                        <li id="exit">Exit</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="main_nav">
+        <div class="main_nav main-nav--closed">
+            <button class="main_nav__toggle " type="button">Open menu</button>
             <div class="main_nav__wrapper">
                 <ul class="main_nav__items">
-                    <li class="main_nav_item">
+                    <li class="main_nav_item main_nav_item-active">
                         <a href="#" class="main_nav_item-link">General</a>
                     </li>
                     <li class="main_nav_item">
@@ -36,12 +44,10 @@
                         <a href="#" class="main_nav_item-link">Contacts</a>
                     </li>
                 </ul>
-                <div class="profile">
-                    <img src="" class="profile_photo" id="profile_photo" alt="Your's photo">
-                    <ul class="profile_menu">
-                        <li id="exit">Exit</li>
-                    </ul>
-                </div>
+                <ul class="profile_menu">
+                    <li id="exit">Exit</li>
+                </ul>
+
             </div>
         </div>
     </nav>
@@ -58,11 +64,11 @@
         </div>
     </div>
     <div class="primary_information">
-        <table>
-            <caption>Primary information</caption>
+        <h4 class="primary_header">Primary information</h4>
+        <table class="primary_items">
             <tr>
-                <td>Status</td>
-                <td>Full-time</td>
+                <td class="primary_name">Status</td>
+                <td class="primary_details">Full-time</td>
             </tr>
             <tr>
                 <td>Production Category</td>
@@ -78,6 +84,7 @@
 <footer></footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="../script/menu.js"></script>
 
 
 </html>
