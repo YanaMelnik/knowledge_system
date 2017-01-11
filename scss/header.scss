@@ -37,6 +37,10 @@
     border: 1px solid red;
   }
 
+  .main_nav_item{
+    float: left;
+  }
+
   .main_nav__wrapper, .head_nav__wrapper {
     @include container;
     @include clearfix;
