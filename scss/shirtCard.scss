@@ -1,0 +1,37 @@
+@import "mixin.scss";
+
+.shirt_card{
+  box-sizing: border-box;
+  border: 1px solid red;
+  width: 320px;
+  min-height: 70px;
+  margin: 0 auto;
+  text-align: center;
+  @include container;
+  padding: 20px;
+
+  .shirt_card__wrapper{
+    box-sizing: border-box;
+    border: 1px solid blue;
+  }
+
+  .profile_photo{
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+
+
+@media #{$table-widths} {
+  .shirt_card{
+    @include clearfix;
+    .profile_photo{
+      float: left;
+      width: 50%;
+    }
+    .shirt_inform{
+      float: left;
+    }
+  }
+}

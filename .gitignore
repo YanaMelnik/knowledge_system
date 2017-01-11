@@ -45,4 +45,4 @@ fabric.properties
 ### Sass template
 .sass-cache/
 *.css.map
-*.css
+scss/*.css
