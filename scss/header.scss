@@ -1,40 +1,63 @@
 @import "mixin.scss";
+@import "variables.scss";
+
+.main_nav__items, .profile_menu, .subnav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main_nav_item-link {
+  text-decoration: none;
+  color: black;
+}
+
+.main_nav {
+  width: 320px;
+  min-height: 70px;
+  margin: 0 auto;
+}
+
+.profile_photo {
+  display: none;
+
+}
+
+.main_nav__wrapper, .head_nav__wrapper {
+  box-sizing: border-box;
+  border: 1px solid blue;
+}
+
 @media #{$table-widths} {
   .main_nav, .head_nav {
     width: auto;
     min-height: 70px;
     margin: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
   }
 
   .main_nav__wrapper, .head_nav__wrapper {
     @include container;
     @include clearfix;
   }
-}
 
-.head_nav, .main_nav {
-  width: 100%;
-  background-color: #959997;
-  height: 200px;
-  margin: 0;
-  padding: 0;
-}
+  .profile {
+    float: right;
+    min-height: 70px;
+    position: absolute;
+    top: 0;
+    right: 20%;
+  }
 
+  .logo {
+    float: left;
+    min-height: 70px;
+  }
 
+  .profile_photo {
+    display: block;
 
-.head_nav::after {
-  display: block;
-  clear:both;
+  }
 
-}
-
-.logo {
-  float: left;
-  height: auto;
-  top: 1%;
-  left: 5%;
-}
-
-.profile{
-  float: right;
 }
