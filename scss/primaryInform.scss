@@ -1,20 +1,19 @@
 @import "mixin.scss";
+@import "variables.scss";
 
 .primary_information{
   @include container;
   box-sizing: border-box;
-  border: 1px solid red;
+  background-color: $bg-information;
+
 
   .primary_header{
-    text-align: center;
+    @include namePage;
   }
 
   .primary_items{
-    box-sizing: border-box;
-    border: 1px solid red;
     width: 100%;
     padding: 2%;
   }
-
 }
 

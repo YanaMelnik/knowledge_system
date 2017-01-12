@@ -1,5 +1,3 @@
-@import "variables.scss";
-
 @mixin clearfix {
   &:after {
     content: "";
@@ -11,12 +9,14 @@
 @mixin container {
   width: 60%;
   margin: 0 auto;
-
-  @media #{$table-widths} {
-    width: 640px;
-  }
-
-  @media #{$desktop-widths} {
-    width: 960px;
-  }
+  min-width: 300px;
 }
+
+@mixin namePage {
+  background-color: #c6e3e6;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3em;
+}
+

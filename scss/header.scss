@@ -10,6 +10,9 @@
 
 .head_nav {
   text-align: center;
+  min-width: 300px;
+  background-color: $bg-darkgrey;
+
 }
 
 .main_nav_item-link {
@@ -77,8 +80,8 @@
 }
 
 .main_nav {
-  width: 60%;
-  margin: 0 auto;
+  @include container;
+
   position: relative;
   background-color: #b3b3b3;
 }
@@ -90,11 +93,6 @@
 
 .logo {
   margin: 2%;
-}
-
-.main_nav__wrapper, .head_nav__wrapper {
-  box-sizing: border-box;
-  border: 1px solid blue;
 }
 
 .main_nav__toggle {
@@ -173,6 +171,11 @@
   }
 }
 
+.main_nav_item{
+  box-sizing: border-box;
+  border: 1px solid #a1a1a1;
+}
+
 @media  #{$mobile-widths-only}{
   .main-nav--closed .main_nav_item {
     display: none;
@@ -202,8 +205,7 @@
   .main_nav, .head_nav {
     width: auto;
     margin: 0;
-    box-sizing: border-box;
-    border: 1px solid red;
+
   }
 
   .main_nav__toggle {
@@ -217,18 +219,13 @@
   .main_nav_item {
     float: left;
     width: 25%;
-
-    box-sizing: border-box;
-    border: 1px solid red;
+    text-align: center;
+    .main_nav_item-link{
+      padding: 12px 0;
+    }
   }
 
-  .main_nav__items {
-    width: 100%;
-    height: 100%;
 
-    box-sizing: border-box;
-    border: 1px solid black;
-  }
 
   .subnav {
     position: absolute;

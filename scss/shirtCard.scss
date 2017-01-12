@@ -1,19 +1,16 @@
 @import "mixin.scss";
+@import "variables";
 
 .shirt_card{
   box-sizing: border-box;
-  border: 1px solid red;
   width: 320px;
   min-height: 70px;
   margin: 0 auto;
   text-align: center;
   @include container;
   padding: 20px;
+  background-color: $bg-information;
 
-  .shirt_card__wrapper{
-    box-sizing: border-box;
-    border: 1px solid blue;
-  }
 
   .profile_photo{
     height: 100%;

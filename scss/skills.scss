@@ -1,7 +1,54 @@
 @import "mixin.scss";
+@import "variables.scss";
 
 .skills {
   @include container;
   box-sizing: border-box;
-  border: 1px solid red;
+  background-color: $bg-information;
+
+  .sphere {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #ffffff ;
+    border-top: 2px solid #ffffff ;
+  }
+
+  .skills_header{
+    @include namePage;
+  }
+
+  .sphere_knowledges {
+    padding-left: 7%;
+    padding-bottom: 3%;
+  }
+  .sphere_knowledge {
+    margin: 5px 5px;
+
+  }
+
+  .level {
+    margin: 0 1%;
+    padding: 3px 7px;
+
+    color: #737673;
+    display: none;
+
+    &:hover{
+      font-weight: 600;
+      box-sizing: border-box;
+      border: 3px solid #0d7ab0;
+      color: #0d7ab0;
+    }
+  }
+
+  .level_active{
+    display: inline;
+    color: #0d7ab0;
+    box-sizing: border-box;
+    border: 1px solid #0d7ab0;
+  }
+
 }
