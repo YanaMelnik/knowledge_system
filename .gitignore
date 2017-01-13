@@ -46,3 +46,4 @@ fabric.properties
 .sass-cache/
 *.css.map
 scss/*.css
+stylesheet/*.css

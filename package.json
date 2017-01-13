@@ -1,0 +1,7 @@
+{
+  "name": "knowledge_system",
+  "version": "1.0.0",
+  "dependencies": {
+    "slick-carousel": "^1.6.0"
+  }
+}
