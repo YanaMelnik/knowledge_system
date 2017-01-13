@@ -40,8 +40,8 @@
   }
 }
 
-
 .img_big {
+  display: none;
   position: absolute;
   width: 60%;
   background-color: $bg-information;
@@ -50,20 +50,14 @@
   opacity: 1;
 
   .img_project {
-    //float: left;
-    //width: 70%;
     box-sizing: border-box;
     border-bottom: 3px solid #d1d1d1;
   }
 
   .project_description {
-    //float: right;
-    //width: 24%;
-    //margin: 3%;
     text-align: center;
     h5 {
       font-size: larger;
-
     }
   }
 }
@@ -84,17 +78,14 @@
   .project {
     width: 29%;
   }
-
+  .project:nth-child(2n+1) {
+    clear: none;
+  }
   .project:nth-child(3n+1) {
     clear: left;
   }
 
-  .project:nth-child(2n+1) {
-    clear: none;
-  }
-
   .img_big {
-
     .img_project {
       float: left;
       width: 70%;

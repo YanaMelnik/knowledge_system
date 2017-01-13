@@ -3,7 +3,6 @@
 
 .shirt_card{
   box-sizing: border-box;
-  width: 320px;
   min-height: 70px;
   margin: 0 auto;
   text-align: center;
@@ -12,10 +11,12 @@
   background-color: $bg-information;
 
 
+
   .profile_photo{
     height: 100%;
     vertical-align: middle;
-    margin: 20px;
+    margin: 2%;
+
   }
 }
 
@@ -30,6 +31,8 @@
     }
     .shirt_inform{
       float: left;
+      width: 44%;
+
     }
   }
 }

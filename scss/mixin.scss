@@ -20,3 +20,30 @@
   line-height: 3em;
 }
 
+@mixin button {
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  background-color: #f9f9f9;
+  border: 1px solid #dcdcdc;
+  text-shadow: 0px 1px 0px #ffffff;
+
+  &:hover {
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    background-color: #e9e9e9;
+  }
+}
+
+@mixin buttonSave {
+  @include button;
+  background: linear-gradient(to bottom, #e3f9e2 5%, #a4e9a3 100%);
+  background-color: #f9f9f9;
+  border: 1px solid #dcdcdc;
+
+  &:hover {
+    background: linear-gradient(to bottom, #a4e9a3 5%, #e3f9e2 100%);
+    background-color: #e9e9e9;
+  }
+}
+

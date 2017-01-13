@@ -12,11 +12,11 @@
     margin-bottom: 0;
     padding: 1%;
     box-sizing: border-box;
-    border-bottom: 2px solid #ffffff ;
-    border-top: 2px solid #ffffff ;
+    border-bottom: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
   }
 
-  .skills_header{
+  .skills_header {
     @include namePage;
   }
 
@@ -36,7 +36,7 @@
     color: #737673;
     display: none;
 
-    &:hover{
+    &:hover {
       font-weight: 600;
       box-sizing: border-box;
       border: 3px solid #0d7ab0;
@@ -44,11 +44,46 @@
     }
   }
 
-  .level_active{
+  .level_active {
     display: inline;
     color: #0d7ab0;
     box-sizing: border-box;
     border: 1px solid #0d7ab0;
   }
 
+  .add_skills {
+    @include container;
+    width: 100%;
+    padding: 2%;
+    @include button;
+  }
+
+  .new_skills {
+    position: absolute;
+    @include container;
+    background-color: $bg-information;
+    display: none;
+
+    .level {
+      display: inline;
+    }
+
+    .sphere {
+      cursor: pointer;
+      @include button;
+    }
+
+    .save_skills {
+      @include buttonSave;
+      @include container;
+      width: 100%;
+      padding: 2%;
+    }
+  }
+
+  @media #{$table-widths} {
+    .sphere_levels {
+      display: inline;
+    }
+  }
 }
