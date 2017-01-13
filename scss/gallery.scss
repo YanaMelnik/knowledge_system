@@ -1,0 +1,116 @@
+//.project1, .project4, .project7 {
+//  background-image: url("../images/gallery/project_01.jpg");
+//}
+//
+//.project2, .project5, .project8 {
+//  background-image: url("../images/gallery/project_02.jpg");
+//}
+//
+//.project3, .project6, .project9 {
+//  background-image: url("../images/gallery/project_03.jpg");
+//}
+@import "mixin.scss";
+@import "variables.scss";
+
+.gallery {
+  @include container;
+  overflow: hidden;
+}
+
+.gallery_projects {
+  padding-left: 0;
+}
+
+.project {
+  width: 96%;
+  margin: 2% 2% 40px 2%;
+  height: 100%;
+  float: left;
+  list-style: none;
+  box-sizing: border-box;
+  border: 3px solid #d1d1d1;
+  text-align: center;
+
+  .img_project {
+    width: 100%;
+  }
+
+  .project_description {
+    display: none;
+  }
+}
+
+
+.img_big {
+  position: absolute;
+  width: 60%;
+  background-color: $bg-information;
+  box-sizing: border-box;
+  border: 3px solid #d1d1d1;
+  opacity: 1;
+
+  .img_project {
+    //float: left;
+    //width: 70%;
+    box-sizing: border-box;
+    border-bottom: 3px solid #d1d1d1;
+  }
+
+  .project_description {
+    //float: right;
+    //width: 24%;
+    //margin: 3%;
+    text-align: center;
+    h5 {
+      font-size: larger;
+
+    }
+  }
+}
+
+
+
+@media #{$table-widths} {
+  .project {
+    width: 46%;
+  }
+
+  .project:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
+@media #{$desktop-widths} {
+  .project {
+    width: 29%;
+  }
+
+  .project:nth-child(3n+1) {
+    clear: left;
+  }
+
+  .project:nth-child(2n+1) {
+    clear: none;
+  }
+
+  .img_big {
+
+    .img_project {
+      float: left;
+      width: 70%;
+      box-sizing: border-box;
+      border-right: 3px solid #d1d1d1;
+      border-bottom: 0;
+    }
+
+    .project_description {
+      float: right;
+      width: 24%;
+      margin: 3%;
+      text-align: justify;
+
+    }
+  }
+}
+
+
