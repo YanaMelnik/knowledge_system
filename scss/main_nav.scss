@@ -1,18 +1,8 @@
-@import "mixin.scss";
-@import "variables.scss";
-
-.main_nav__items, .profile_menu, .subnav {
+.main_nav__items, .subnav {
   margin: 0;
   padding: 0;
   list-style: none;
   font-weight: bold;
-}
-
-.head_nav {
-  text-align: center;
-  min-width: 300px;
-  background-color: $bg-darkgrey;
-
 }
 
 .main_nav_item-link {
@@ -41,20 +31,6 @@
   }
 }
 
-.profile_menu {
-  display: block;
-  padding: 12px 21px;
-
-  line-height: 18px;
-  color: #ffffff;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #808080;
-    border-top-color: #808080;
-  }
-}
-
 .subnav_item {
   color: #00007b;
   background-color: #8b9dc3;
@@ -73,7 +49,6 @@
 
   &:active {
     color: #2c4598;
-
     background-color: #a5b9e7;
     border-top-color: #a5b9e7;
   }
@@ -81,18 +56,8 @@
 
 .main_nav {
   @include container;
-
   position: relative;
   background-color: #b3b3b3;
-}
-
-.profile {
-  display: none;
-  margin: 2%;
-}
-
-.logo {
-  margin: 2%;
 }
 
 .main_nav__toggle {
@@ -124,10 +89,8 @@
   position: absolute;
   top: 15px;
   left: 17px;
-
   width: 36px;
   height: 2px;
-
   background-color: #ffffff;
   box-shadow: 0 8px 0 0 #ffffff,
   0 16px 0 0 #ffffff;
@@ -165,13 +128,14 @@
   &::after {
     transform: rotate(-45deg);
   }
+
   &:active::before,
   &:active::after {
     background-color: rgba(255, 255, 255, 0.3);
   }
 }
 
-.main_nav_item{
+.main_nav_item {
   box-sizing: border-box;
   border: 1px solid #a1a1a1;
 }
@@ -194,15 +158,13 @@
     top: 0;
     right: 0;
     left: 70px;
-
     height: 80vh;
-
     background-color: #9a9a9a;
   }
 }
 
 @media #{$table-widths} {
-  .main_nav, .head_nav {
+  .main_nav {
     width: auto;
     margin: 0;
 
@@ -220,12 +182,10 @@
     float: left;
     width: 25%;
     text-align: center;
-    .main_nav_item-link{
+    .main_nav_item-link {
       padding: 12px 0;
     }
   }
-
-
 
   .subnav {
     position: absolute;
@@ -235,25 +195,8 @@
     }
   }
 
-  .main_nav__wrapper, .head_nav__wrapper {
+  .main_nav__wrapper{
     @include container;
     @include clearfix;
-  }
-
-  .profile {
-    display: block;
-    float: right;
-
-    .profile_menu {
-      display: none;
-      position: absolute;
-      z-index: 10;
-      width: 7%;
-      margin-right: 1px;
-    }
-  }
-
-  .logo {
-    float: left;
   }
 }

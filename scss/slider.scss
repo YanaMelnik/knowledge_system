@@ -1,12 +1,15 @@
+.slider_wrapper{
+  display: none;
+}
+
 .slider {
   float: left;
-  width: 60%;
+  width: 50%;
   max-width: 60%;
   max-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #00007b;
-
 }
 
 .slider_img {
@@ -26,6 +29,15 @@
   bottom: 5%;
 }
 
-.slick-dots li button:before{
-
+@media #{$table-widths} {
+  .slider_wrapper{
+    display: block;
+  }
 }
+
+@media #{$desktop-widths} {
+  .slider{
+    width: 60%;
+  }
+}
+

@@ -9,9 +9,6 @@
 //.project3, .project6, .project9 {
 //  background-image: url("../images/gallery/project_03.jpg");
 //}
-@import "mixin.scss";
-@import "variables.scss";
-
 .gallery {
   @include container;
   overflow: hidden;

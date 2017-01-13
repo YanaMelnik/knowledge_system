@@ -7,9 +7,13 @@
 }
 
 @mixin container {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   min-width: 300px;
+
+  @media #{$table-widths} {
+    width: 60%;
+  }
 }
 
 @mixin namePage {
@@ -23,11 +27,11 @@
 @mixin button {
   cursor: pointer;
   font-weight: bold;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0 1px 0 0 #ffffff;
   background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
   background-color: #f9f9f9;
   border: 1px solid #dcdcdc;
-  text-shadow: 0px 1px 0px #ffffff;
+  text-shadow: 0 1px 0 #ffffff;
 
   &:hover {
     background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);

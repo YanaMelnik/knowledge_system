@@ -1,6 +1,3 @@
-@import "mixin.scss";
-@import "variables.scss";
-
 .skills {
   @include container;
   box-sizing: border-box;
@@ -23,7 +20,12 @@
   .sphere_knowledges {
     padding-left: 7%;
     padding-bottom: 3%;
+
+    .sphere_levels {
+      display: inline;
+    }
   }
+
   .sphere_knowledge {
     margin: 5px 5px;
 
@@ -52,7 +54,6 @@
   }
 
   .add_skills {
-    @include container;
     width: 100%;
     padding: 2%;
     @include button;
@@ -71,6 +72,10 @@
     .sphere {
       cursor: pointer;
       @include button;
+    }
+
+    .sphere_levels {
+      display: block;
     }
 
     .save_skills {

@@ -1,7 +1,7 @@
 .enter_form {
   float: right;
-  width: 40%;
-  min-width: 300px;
+  width: 100%;
+  min-width: 100px;
   max-height: 100vh;
   text-align: center;
   line-height: 100vh;
@@ -18,6 +18,24 @@
     width: 200px;
     height: 30px;
     box-sizing: border-box;
+  }
+
+  .logo_index{
+    max-width: 500px;
+    min-width: 150px;
+    width: 60%;
+  }
+}
+
+@media #{$table-widths} {
+  .enter_form {
+    width: 50%;
+  }
+}
+
+@media #{$desktop-widths} {
+  .enter_form {
+    width: 40%;
   }
 }
 
