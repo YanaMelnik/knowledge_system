@@ -47,3 +47,5 @@ fabric.properties
 *.css.map
 scss/*.css
 stylesheet/*.css
+node_modules/
+lib/mappings/
