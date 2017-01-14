@@ -4,7 +4,7 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: center,
-        zoom: 15,
+        zoom: 13,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }
@@ -13,7 +13,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: center,
         map: map,
-        title: "Office 1"
+        title: "My office"
     });
 
     marker.setMap(map);
@@ -138,6 +138,22 @@ function initMap() {
 
     map.mapTypes.set('map_style', styledMap);
     map.setMapTypeId('map_style');
+
+
+    function addMarker(name, coordinateLat, coordinateLng) {
+        var worker1 = new google.maps.Marker({
+            position: {lat: +coordinateLat, lng: +coordinateLng},
+            map: map,
+            title: name,
+            icon: {
+                url: "http://iv.bh/images/icons/map_icon.png",
+                scaledSize: new google.maps.Size(35, 40)
+            }
+        });
+    }
+
+    addMarker('Yana Melnik', '50.3974599', '30.5083627');
+
 }
 
 initMap();

@@ -3,7 +3,6 @@
   box-sizing: border-box;
   background-color: $bg-information;
 
-
   .primary_header{
     @include namePage;
   }
@@ -11,6 +10,11 @@
   .primary_items{
     width: 100%;
     padding: 2%;
+  }
+
+  .primary_name{
+    vertical-align: top;
+    line-height: 40px;
   }
 }
 

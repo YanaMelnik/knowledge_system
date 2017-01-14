@@ -1,0 +1,68 @@
+.team {
+  @include container;
+  padding: 1%;
+  overflow: hidden;
+
+  .worker {
+    background-color: $bg-information;
+    box-sizing: border-box;
+    border: 1px solid red;
+    margin: 2%;
+    height: 40vw;
+    padding-bottom: 2%;
+
+    .employee {
+      margin: 2% 40%;
+      height: 50%;
+    }
+
+    .shirt_inform {
+      text-align: center;
+    }
+  }
+
+  @media #{$table-widths} {
+    .worker {
+      width: 96%;
+      height: 20vw;
+      @include clearfix;
+
+      .employee {
+        float: left;
+        margin: 2% 5%;
+        height: 90%;
+        max-width: 30%;
+        min-width: 30%;
+      }
+
+      .shirt_inform {
+        float: left;
+        margin: 7%;
+      }
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .team {
+    @include clearfix;
+
+    .worker {
+      width: 47%;
+      height: 10vw;
+      //margin: 0;
+    }
+
+    .worker:nth-child(odd) {
+      float: left;
+      margin-right: 0;
+    }
+
+    .worker:nth-child(even) {
+      float: right;
+      margin-left: 0;
+    }
+
+  }
+}
+
