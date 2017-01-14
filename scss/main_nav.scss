@@ -165,9 +165,15 @@
 
 @media #{$table-widths} {
   .main_nav {
-    width: auto;
+    width: 100%;
     margin: 0;
-
+    position: fixed;
+  }
+  nav {
+    width: 100%;
+    position: fixed;
+    //height: 20%;
+    top: 0;
   }
 
   .main_nav__toggle {
@@ -195,8 +201,9 @@
     }
   }
 
-  .main_nav__wrapper{
+  .main_nav__wrapper {
     @include container;
     @include clearfix;
+    //height: 10%;
   }
 }

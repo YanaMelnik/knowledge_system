@@ -9,11 +9,8 @@ navToggle.addEventListener('click', function () {
         navMain.classList.add('main-nav--closed');
         navMain.classList.remove('main-nav--opened');
     }
-})
+});
 
 var navMainItem=document.querySelectorAll('.main_nav_item');
 var sunavItem = document.querySelector('.subnav_item');
 
-navMainItem.addEventListener('click', function () {
-
-})

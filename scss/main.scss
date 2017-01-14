@@ -1,0 +1,12 @@
+@media #{$table-widths} {
+  main {
+    margin-top: 11%;
+  }
+}
+
+@media #{$desktop-widths} {
+  main {
+    margin-top: 160px;
+
+  }
+}

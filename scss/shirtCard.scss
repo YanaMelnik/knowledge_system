@@ -1,34 +1,32 @@
-.shirt_card{
+.shirt_card {
   box-sizing: border-box;
   min-height: 70px;
-  margin: 0 auto;
   text-align: center;
   @include container;
-  padding: 20px;
+  padding: 2%;
   background-color: $bg-information;
 
-
-
-  .profile_photo{
+  .profile_photo {
     vertical-align: middle;
-    margin: 2%;
+    margin: 3%;
     max-height: 300px;
   }
 }
 
-
-
 @media #{$table-widths} {
-  .shirt_card{
+  .shirt_card {
     @include clearfix;
-    .profile_photo{
+    margin-top: 130px;
+
+    .profile_photo {
       float: left;
       width: 50%;
     }
-    .shirt_inform{
+    .shirt_inform {
       float: left;
       width: 44%;
-
+      margin-top: 8%;
     }
   }
 }
+

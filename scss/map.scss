@@ -1,0 +1,10 @@
+.contacts{
+  @include container;
+  margin-bottom: 3%;
+}
+
+.map {
+  height: 50vw;
+  border-radius: 10px;
+  max-height: 300px;
+}
