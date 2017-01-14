@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/node_modules/slick-carousel/slick/slick.js"
+  },
+
+  "response": {
+    "status": 200,
+    "bodyFileName": "../../node_modules/slick-carousel/slick/slick.js"
+  }
+}
