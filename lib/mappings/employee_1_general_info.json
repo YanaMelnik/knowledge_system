@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/employee/1"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"photo\": \"/images/profile/1.png\",\n\"name\": \"John Doe\",\n\"job position\": \"Front End Developer\",\n\"phone\": \"+38 093 99 99 999\",\n\"status\": \"Full-time\",\n\"prodCategory\": \"Production\",\n\"manager\": \"Peter Pan\"}"
+  }
+}

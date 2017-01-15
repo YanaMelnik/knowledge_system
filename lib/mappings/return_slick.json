@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/node_modules/slick-carousel/slick/slick.js"
+    "url": "/lib/slick.js"
   },
 
   "response": {
