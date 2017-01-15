@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/projects?page=1"
+    "url": "/projects"
   },
 
   "response": {

@@ -31,10 +31,27 @@ function Projects() {
 
     function render() {
         state.allPages = [];
-        for (var i = 1; i <= state.pages; i++ ) {
+        for (var i = 1; i <= state.pages; i++) {
             state.allPages.push(i);
         }
         var output = Mustache.render($('#galleryEmployee').html(), state);
         $('#container .container').html(output);
+        highlightCurrentPage();
+
+        $('.gallery_page').click(function () {
+            changePage(+$(this).data('page'));
+        })
+    }
+
+    function highlightCurrentPage() {
+        $('.gallery_page').removeClass('page_active');
+        $('.gallery_page[data-page="' + state.currentPageNumber + '"]').addClass('page_active');
+    }
+
+    function changePage(page) {
+        if (page !== state.currentPageNumber) {
+            state.currentPageNumber = page
+        }
+        getProjects();
     }
 }
