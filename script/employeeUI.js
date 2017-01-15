@@ -6,6 +6,10 @@ function EmployeeComponent(user) {
     container.html(employee.html());
 
     render();
+    new MenuComponent(function (menuItem) {
+        state.currentPage = menuItem;
+        render();
+    });
 
     function render() {
         switch (state.currentPage) {
@@ -16,10 +20,6 @@ function EmployeeComponent(user) {
                 renderSkills();
                 break;
         }
-        new MenuComponent(function (menuItem) {
-            state.currentPage = menuItem;
-            render();
-        });
     }
 
     function renderGeneral() {
@@ -47,7 +47,6 @@ function EmployeeComponent(user) {
                 container.find('.container').html(output);
                 container.find('.sphere_levels').each(function(index, item){
                     var userLevel = $(item).data('user-level');
-                    console.log(userLevel);
                     $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
                 })
             },

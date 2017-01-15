@@ -25,9 +25,6 @@ function MenuComponent(menuCallback) {
     menu.find('.menu_item').click(function () {
         menuCallback($(this).data('menu-item-name'));
     });
-
-
-
 }
 
 
