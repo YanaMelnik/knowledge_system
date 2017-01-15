@@ -19,9 +19,13 @@ function EmployeeComponent(user) {
             case 'skills':
                 renderSkills();
                 break;
+            case 'projects':
+                new Projects();
+                break;
             case 'contacts':
                 renderContact();
                 break;
+
         }
     }
 

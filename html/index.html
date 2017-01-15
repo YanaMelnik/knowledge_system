@@ -147,6 +147,19 @@
         </div>
     </div>
 </div>
+<div id="galleryEmployee" class="template">
+    <ul class="gallery_projects">
+        {{#projects}}
+        <li class="project">
+            <img src="{{photo}}" alt="Project {{name}}" class="img_project">
+            <div class="project_description">
+                <h5>Project - {{name}}</h5>
+                <p>{{description}}</p>
+            </div>
+        </li>
+        {{/projects}}
+    </ul>
+</div>
 <div id="contact" class="template">
     <div class="contacts">
         <div id="map" class="map">
@@ -164,6 +177,7 @@
 <script type="text/javascript" src="/script/employeeUI.js"></script>
 <script type="text/javascript" src="/script/menu.js"></script>
 <script type="text/javascript" src="/script/map.js"></script>
+<script type="text/javascript" src="/script/projects.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvrHa8sHTOEGNfEvzbKpXR-Tlgunai8hw&">
 </script>
 

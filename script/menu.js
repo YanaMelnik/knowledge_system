@@ -23,9 +23,18 @@ function MenuComponent(menuCallback) {
     }
 
     menu.find('.menu_item').click(function () {
+        menu.find('.menu_item').removeClass('main_nav_item-active');
+        $(this).addClass('main_nav_item-active');
         menuCallback($(this).data('menu-item-name'));
     });
+
+    menu.find('.subnav').click(function () {
+        menu.find('.menu_item').removeClass('main_nav_item-active');
+        $(this).parent('.menu_nav_item').addClass('main_nav_item-active'); //разобраться с проблемой активного пункта меню мобильная версия
+    })
 }
+
+
 
 
 
