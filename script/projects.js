@@ -29,6 +29,22 @@ function Projects() {
         });
     }
 
+    function showProject(projectId) {
+        var project = findProject(projectId);
+        var output = Mustache.render($('#galleryPreview').html(), project);
+        var preview = $('#container').find('.preview');
+        preview.html(output);
+        $('.dark_background').click(function () {
+            preview.empty();
+        })
+    };
+
+    function findProject(projectId) {
+        return state.projects.filter(function (project) {
+            return project.id === projectId;
+        })[0];
+    }
+
     function render() {
         state.allPages = [];
         for (var i = 1; i <= state.pages; i++) {
@@ -40,6 +56,10 @@ function Projects() {
 
         $('.gallery_page').click(function () {
             changePage(+$(this).data('page'));
+        });
+
+        $('.project').click(function () {
+            showProject(+$(this).data('project-id'))
         })
     }
 

@@ -148,22 +148,42 @@
     </div>
 </div>
 <div id="galleryEmployee" class="template">
-    <ul class="gallery_projects">
-        {{#projects}}
-        <li class="project">
-            <img src="{{photo}}" alt="Project {{name}}" class="img_project">
-            <div class="project_description">
-                <h5>Project - {{name}}</h5>
-                <p>{{description}}</p>
+    <div>
+        <ul class="gallery_projects">
+            {{#projects}}
+            <li class="project" data-project-id="{{id}}">
+                <img src="{{photo}}" alt="Project {{name}}" class="img_project">
+                <div class="project_description">
+                    <h5>Project - {{name}}</h5>
+                    <p>{{description}}</p>
+                </div>
+            </li>
+            {{/projects}}
+        </ul>
+        <ul class="pages">
+            {{#allPages}}
+            <li data-page="{{.}}" class="gallery_page"><a href="javascript:void(0)">{{.}}</a></li>
+            {{/allPages}}
+        </ul>
+        <div class="preview"></div>
+    </div>
+</div>
+<div id="galleryPreview" class="template">
+    <div class="dark_background">
+        <div class="img_big">
+            <div>
+                <div class="img">
+                    <div class="prev_img"></div>
+                    <img src="{{photo}}" alt="{{name}}" class="img_project">
+                    <div class="next_img"></div>
+                </div>
+                <div class="project_description">
+                    <h5>{{name}}</h5>
+                    <p>{{description}}</p>
+                </div>
             </div>
-        </li>
-        {{/projects}}
-    </ul>
-    <ul class="pages">
-        {{#allPages}}
-        <li data-page="{{.}}" class="gallery_page"><a href="javascript:void(0)">{{.}}</a></li>
-        {{/allPages}}
-    </ul>
+        </div>
+    </div>
 </div>
 <div id="contact" class="template">
     <div class="contacts">
