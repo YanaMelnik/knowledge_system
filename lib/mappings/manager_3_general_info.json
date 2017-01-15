@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/employee/3"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\n  \"photo\": \"/images/profile/3.png\",\n  \"name\": \"Super Manager\",\n  \"job_position\": \"Manager\",\n  \"phone\": \"+38 063 77 55 555\",\n  \"status\": \"Full-time\",\n  \"prod_category\": \"Production\",\n  \"manager\": \"Darth Vader\",\n  \"office\": {\n    \"lat\": \"50.4410537\",\n    \"lng\": \"30.618838\"\n  }\n}"
+  }
+}

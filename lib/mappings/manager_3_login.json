@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/login",
+    "bodyPatterns": [
+      {
+        "equalToJson": "{\"login\" : \"manager\", \"password\" : \"12345\"}",
+        "ignoreArrayOrder": true
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"id\": 3, \"role\" : \"manager\"}"
+  }
+}
