@@ -5,15 +5,18 @@
 
   .worker {
     background-color: $bg-information;
+    overflow: hidden;
     box-sizing: border-box;
-    border: 1px solid red;
+    border: 2px solid #c2c2c2;
     margin: 2%;
-    height: 40vw;
     padding-bottom: 2%;
+    min-width: 320px;
 
     .employee {
-      margin: 2% 40%;
-      height: 50%;
+      margin: 2% 30%;
+      height: 55%;
+      width: 40%;
+      min-height: 55%;
     }
 
     .shirt_inform {
@@ -25,19 +28,21 @@
     .worker {
       width: 96%;
       height: 20vw;
+      min-height: auto;
       @include clearfix;
 
       .employee {
         float: left;
-        margin: 2% 5%;
-        height: 90%;
+        margin: 2% 7%;
+        height: 96%;
         max-width: 30%;
         min-width: 30%;
       }
 
       .shirt_inform {
         float: left;
-        margin: 7%;
+        margin: 5vw 5%;
+        max-width: 50%;
       }
     }
   }
@@ -49,7 +54,19 @@
 
     .worker {
       width: 47%;
-      height: 10vw;
+      height: 15vw;
+      //min-height: 15vw;
+
+      .shirt_inform {
+        margin: 10% 0;
+      }
+
+      .employee{
+        height: 85%;
+        width: 100%;
+        min-width: 40%;
+        margin: 5% 5%;
+      }
     }
 
     .worker:nth-child(odd) {
@@ -61,7 +78,9 @@
       float: right;
       margin-left: 0;
     }
-
   }
 }
+
+
+
 

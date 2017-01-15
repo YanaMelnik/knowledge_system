@@ -11,6 +11,6 @@
   },
   "response": {
     "status": 200,
-    "body": "{\"id\": 1}"
+    "body": "{\"id\": 1, \"role\" : \"employee\"}"
   }
 }
