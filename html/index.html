@@ -88,13 +88,13 @@
 </div>
 <div id="generalEmployee" class="template">
     <div class="shirt_card">
-        <img src="/images/slider_1.png" class="profile_photo" id="users_photo" alt="Your/'s photo">
+        <img src="{{photo}}" class="profile_photo" id="users_photo" alt="Your/'s photo">
         <div class="shirt_inform">
-            <span class="name_surname">Yana Melnik</span>
+            <span class="name_surname">{{name}}</span>
             <br>
-            <span class="job-position">Front End Developer</span>
+            <span class="job-position">{{job_position}}</span>
             <br>
-            <span class="phone">+38 093 317 1014</span>
+            <span class="phone">{{phone}}</span>
         </div>
     </div>
     <div class="primary_information">
@@ -102,19 +102,19 @@
         <table class="primary_items">
             <tr>
                 <td class="primary_name">Status:</td>
-                <td class="primary_details">Full-time</td>
+                <td class="primary_details">{{status}}</td>
             </tr>
             <tr>
                 <td class="primary_name">Production Category:</td>
-                <td>Production</td>
+                <td class="primary_details">{{prod_category}}</td>
             </tr>
             <tr>
                 <td class="primary_name">Job Function Category:</td>
-                <td class="primary_details">Front End Developer</td>
+                <td class="primary_details">{{job_position}}</td>
             </tr>
             <tr>
                 <td class="primary_name">Functional Manager:</td>
-                <td class="primary_details">Yansov Vladimir</td>
+                <td class="primary_details">{{manager}}</td>
             </tr>
         </table>
     </div>

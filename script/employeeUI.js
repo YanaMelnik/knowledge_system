@@ -4,15 +4,11 @@ function EmployeeComponent() {
 
     container.html(employee.html());
 
-    var general= $('#generalEmployee');
-    container.find('.container').html(general.html());
-
     $.ajax({
         type: 'GET',
         url: '/employee/1',
-        data: JSON.stringify(loginData),
         success: function (data) {
-            ;
+            render(data);
         },
         error: function () {
             alert('Error');
@@ -22,7 +18,8 @@ function EmployeeComponent() {
     });
 
     function render(data) {
-        var photo = container.find();
+        var output = Mustache.render($('#generalEmployee').html(), data);
+        container.find('.container').html(output);
     }
 
 }
