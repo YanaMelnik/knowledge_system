@@ -30,6 +30,10 @@ function Projects() {
     }
 
     function render() {
+        state.allPages = [];
+        for (var i = 1; i <= state.pages; i++ ) {
+            state.allPages.push(i);
+        }
         var output = Mustache.render($('#galleryEmployee').html(), state);
         $('#container .container').html(output);
     }

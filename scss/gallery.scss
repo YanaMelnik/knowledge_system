@@ -5,6 +5,7 @@
 
 .gallery_projects {
   padding-left: 0;
+  @include clearfix;
 }
 
 .project {
@@ -127,5 +128,30 @@
     }
   }
 }
+
+.pages {
+  list-style: none;
+  text-align: center;
+  font-size: 22px;
+  li {
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .page_active{
+    a{
+      text-decoration: underline;
+      color: #197598;
+      font-weight: bold;
+
+    }
+  }
+
+}
+
+
 
 
