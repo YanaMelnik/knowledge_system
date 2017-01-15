@@ -15,6 +15,7 @@ function LoginComponent(loginCallback) {
 
     });
     function doLogin() {
+        container.find('.enter-form').hide();
         var login = container.find('input[name="login"]').val();
         var password = container.find('input[name="password"]').val();
         var loginData = {
@@ -30,7 +31,7 @@ function LoginComponent(loginCallback) {
                 loginCallback(data);
             },
             error: function () {
-                alert('Error');
+                container.find('.enter_form__error').show();
             },
             dataType: 'json',
             contentType: 'application/json'

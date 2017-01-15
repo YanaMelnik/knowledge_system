@@ -25,6 +25,15 @@
     min-width: 150px;
     width: 60%;
   }
+
+  .enter_form__error {
+    border: 1px solid #810000;
+    color: #810000;
+    padding: 10px;
+    display: none;
+    font-size: 0.7em;
+    margin: 0 10px;
+  }
 }
 
 @media #{$table-widths} {
