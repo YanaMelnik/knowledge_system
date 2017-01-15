@@ -3,7 +3,6 @@
   min-height: 70px;
   text-align: center;
   @include container;
-  padding: 2%;
   background-color: $bg-information;
 
   .profile_photo {
@@ -20,7 +19,7 @@
 
     .profile_photo {
       float: left;
-      //width: 50%;
+      width: 50%;
     }
     .shirt_inform {
       float: left;
@@ -29,4 +28,14 @@
     }
   }
 }
+
+@media #{$desktop-widths} {
+  .shirt_card {
+    .profile_photo {
+      width: auto;
+    }
+  }
+}
+
+
 

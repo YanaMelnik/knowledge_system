@@ -1,16 +1,34 @@
-var navMain= document.querySelector('.main_nav');
-var navToggle=document.querySelector('.main_nav__toggle');
+function MenuComponent(menuCallback) {
+    var navMain = $('.main_nav');
+    var navToggle = $('.main_nav__toggle');
 
-navToggle.addEventListener('click', function () {
-    if (navMain.classList.contains('main-nav--closed')){
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-    }else{
-        navMain.classList.add('main-nav--closed');
-        navMain.classList.remove('main-nav--opened');
+    navToggle.click(function () {
+        if (navMain.hasClass('main-nav--closed')) {
+            navMain.removeClass('main-nav--closed');
+            navMain.addClass('main-nav--opened');
+        } else {
+            closeMenu();
+        }
+    });
+
+    var menu = navMain.find('.main_nav__items');
+    menu.click(closeMenu);
+
+    var exit = navMain.find('.exit');
+    exit.click(closeMenu);
+
+    function closeMenu() {
+        navMain.addClass('main-nav--closed');
+        navMain.removeClass('main-nav--opened');
     }
-});
 
-var navMainItem=document.querySelectorAll('.main_nav_item');
-var sunavItem = document.querySelector('.subnav_item');
+    menu.find('.menu_item').click(function () {
+        menuCallback($(this).data('menu-item-name'));
+    });
+
+
+
+}
+
+
 

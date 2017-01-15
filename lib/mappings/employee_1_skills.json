@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/employee/1/skills"
+  },
+  "response": {
+    "status": 200,
+    "body": "[\n  {\n    \"sphere\": \"IDE\",\n    \"skills\": [\n      {\n        \"name\": \"WebStorm\",\n        \"level\": \"Adv\"\n      },\n      {\n        \"name\": \"Sublime Text\",\n        \"level\": \"Interm\"\n      }\n    ]\n  },\n  {\n    \"sphere\": \"Front End\",\n    \"skills\": [\n      {\n        \"name\": \"HTML\",\n        \"level\": \"Adv\"\n      },\n      {\n        \"name\": \"CSS\",\n        \"level\": \"Interm\"\n      }\n    ]\n  }\n]"
+  }
+}

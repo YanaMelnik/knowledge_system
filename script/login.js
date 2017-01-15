@@ -21,6 +21,7 @@ function LoginComponent(loginCallback) {
             login: login,
             password: password
         };
+
         $.ajax({
             type: 'POST',
             url: '/login',

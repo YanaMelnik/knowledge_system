@@ -5,6 +5,7 @@
   font-weight: bold;
 }
 
+
 .main_nav_item-link {
   text-decoration: none;
   color: black;
@@ -168,7 +169,17 @@
     width: 100%;
     margin: 0;
     position: fixed;
+    .main_nav_item {
+      &:nth-child(2) {
+        &:hover {
+          .subnav {
+            display: block;
+          }
+        }
+      }
+    }
   }
+
   nav {
     width: 100%;
     position: fixed;
@@ -196,6 +207,7 @@
   .subnav {
     position: absolute;
     display: none;
+    width: 17.8%;
     .subnav_item {
       width: 100%;
     }
