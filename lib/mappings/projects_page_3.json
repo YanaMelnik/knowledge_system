@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/projects?page=3"
+  },
+
+  "response": {
+    "status": 200,
+    "body": "{\n  \"projects\": [\n    {\n      \"photo\": \"/images/gallery/project_03.jpg\",\n      \"name\": \"Volkswagen\",\n      \"description\": \"Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_01.jpg\",\n      \"name\": \"Mercedes\",\n      \"description\": \"Procured shutters mr it feelings. To or three offer house begin taken am at.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_03.jpg\",\n      \"name\": \"Butafor\",\n      \"description\": \"In companions inhabiting mr principles at insensible do.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_01.jpg\",\n      \"name\": \"Berimor\",\n      \"description\": \"Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_03.jpg\",\n      \"name\": \"Spider Man\",\n      \"description\": \"Procured shutters mr it feelings. To or three offer house begin taken am at.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_01.jpg\",\n      \"name\": \"Rusalochka\",\n      \"description\": \"In companions inhabiting mr principles at insensible do.\"\n    }\n  ],\n  \"page\": 3,\n  \"pages\": 3\n}"
+  }
+}

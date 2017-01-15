@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/projects?page=2"
+  },
+
+  "response": {
+    "status": 200,
+    "body": "{\n  \"projects\": [\n    {\n      \"photo\": \"/images/gallery/project_03.jpg\",\n      \"name\": \"EPAM\",\n      \"description\": \"Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_01.jpg\",\n      \"name\": \"Lifecell\",\n      \"description\": \"Procured shutters mr it feelings. To or three offer house begin taken am at.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_02.jpg\",\n      \"name\": \"ManaMana\",\n      \"description\": \"In companions inhabiting mr principles at insensible do.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_02.jpg\",\n      \"name\": \"KitKat\",\n      \"description\": \"Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_03.jpg\",\n      \"name\": \"Duracell\",\n      \"description\": \"Procured shutters mr it feelings. To or three offer house begin taken am at.\"\n    },\n    {\n      \"photo\": \"/images/gallery/project_01.jpg\",\n      \"name\": \"H&M\",\n      \"description\": \"In companions inhabiting mr principles at insensible do.\"\n    }\n  ],\n  \"page\": 2,\n  \"pages\": 3\n}"
+  }
+}
