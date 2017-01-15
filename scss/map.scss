@@ -1,11 +1,28 @@
-.contacts{
+.contacts {
   @include container;
   margin-bottom: 3%;
 }
 
 .map {
-  height: 50vw;
+  height: 90vw;
   border-radius: 10px;
   max-height: 300px;
   margin: 1%;
+  z-index: 0;
 }
+
+@media #{$table-widths} {
+  .map {
+    margin-top: 30%;
+    //height: 50vw;
+  }
+}
+
+@media #{$desktop-widths} {
+  .map {
+    margin-top: 20%;
+  }
+}
+
+
+

@@ -59,6 +59,7 @@
   @include container;
   position: relative;
   background-color: #b3b3b3;
+  z-index: 1000;
 }
 
 .main_nav__toggle {
