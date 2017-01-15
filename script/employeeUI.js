@@ -19,13 +19,16 @@ function EmployeeComponent(user) {
             case 'skills':
                 renderSkills();
                 break;
+            case 'contacts':
+                renderContact();
+                break;
         }
     }
 
     function renderGeneral() {
         $.ajax({
             type: 'GET',
-            url: '/employee/'+ user.id,
+            url: '/employee/' + user.id,
             success: function (data) {
                 var output = Mustache.render($('#generalEmployee').html(), data);
                 container.find('.container').html(output);
@@ -41,11 +44,11 @@ function EmployeeComponent(user) {
     function renderSkills() {
         $.ajax({
             type: 'GET',
-            url: '/employee/'+ user.id+"/skills",
+            url: '/employee/' + user.id + "/skills",
             success: function (data) {
                 var output = Mustache.render($('#skillsEmployee').html(), data);
                 container.find('.container').html(output);
-                container.find('.sphere_levels').each(function(index, item){
+                container.find('.sphere_levels').each(function (index, item) {
                     var userLevel = $(item).data('user-level');
                     $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
                 })
@@ -58,4 +61,23 @@ function EmployeeComponent(user) {
         });
     }
 
+    function renderContact() {
+        $.ajax({
+            type: 'GET',
+            url: '/employee/' + user.id,
+            success: function (data) {
+                var lat = data.office.lat;
+                var lng = data.office.lng;
+
+                container.find('.container').html($("#contact").html());
+
+                initMap(lat, lng);
+            },
+            error: function () {
+                alert('Error');
+            },
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+    }
 }

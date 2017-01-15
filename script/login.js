@@ -1,6 +1,6 @@
 function LoginComponent(loginCallback) {
 
-    var form = $('.template');
+    var form = $('#loginComponent');
 
     var container = $('#container');
     container.html(form.html());
