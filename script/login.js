@@ -1,4 +1,4 @@
-function LoginComponent() {
+function LoginComponent(loginCallback) {
 
     var form = $('.template');
 
@@ -25,8 +25,8 @@ function LoginComponent() {
             type: 'POST',
             url: '/login',
             data: JSON.stringify(loginData),
-            success: function () {
-                alert('ok');
+            success: function (data) {
+                loginCallback(data);
             },
             error: function () {
                 alert('Error');

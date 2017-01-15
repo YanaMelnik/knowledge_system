@@ -1,10 +1,16 @@
 var state = {
-    currentComponent: 'loginComponent'
+    currentComponent: 'loginComponent',
+    userRole: undefined
 };
 
 function render() {
     if (state.currentComponent === 'loginComponent') {
-        new LoginComponent();
+        new LoginComponent(function (user) {
+            state.role = user.role;
+            if(state.role==="employee"){
+                new EmployeeComponent();
+            }
+        });
     }
 }
 
