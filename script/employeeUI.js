@@ -59,13 +59,6 @@ function EmployeeComponent(user) {
                 container.find('.add_skills').click(function () {
                     skills('#container .add_new_skills');
                 });
-
-                console.log($('#container .dark_background'));
-                $('#container .dark_background').click(function () {
-                    $('#container .add_new_skills').empty();
-                })
-
-
             },
             error: function () {
                 alert('Error');
