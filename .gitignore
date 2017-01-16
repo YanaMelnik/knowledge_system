@@ -48,5 +48,4 @@ fabric.properties
 scss/*.css
 stylesheet/*.css
 node_modules/
-lib/mappings/_*
 .idea/
