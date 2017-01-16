@@ -221,3 +221,10 @@
     //height: 10%;
   }
 }
+.main-nav--closed {
+  .main_nav_item-active {
+    .subnav {
+      display: none;
+    }
+  }
+}
