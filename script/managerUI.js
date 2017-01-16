@@ -18,7 +18,7 @@ function ManagerComponent(user) {
                 break;
             case 'team':
                 console.log('hello contacts!');
-                renderTeam();
+                new RenderTeam();
                 break;
             case 'contacts':
                 console.log('hello contacts!');
@@ -43,21 +43,7 @@ function ManagerComponent(user) {
         });
     }
 
-    function renderTeam() {
-        $.ajax({
-            type: 'GET',
-            url: '/employee/3',
-            success: function (data) {
-                console.log('hello!');
-                var output = Mustache.render($('#myTeam').html(), data);
-                container.find('.container').html(output);
-            },
-            error: function () {
-                alert('Error');
-            },
-            dataType: 'json'
-        });
-    }
+
 
     function renderContact() {
         $.ajax({
