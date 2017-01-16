@@ -173,9 +173,13 @@
         <div class="img_big">
             <div>
                 <div class="img">
-                    <div class="prev_img"></div>
+                    <div class="prev_img change_img" data-project-id="{{prev_project_id}}">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
                     <img src="{{photo}}" alt="{{name}}" class="img_project">
-                    <div class="next_img"></div>
+                    <div class="next_img change_img" data-project-id="{{next_project_id}}">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
                 </div>
                 <div class="project_description">
                     <h5>{{name}}</h5>

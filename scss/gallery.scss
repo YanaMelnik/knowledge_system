@@ -68,22 +68,38 @@
       }
     }
 
-    .prev_img, .next_img {
+    .change_img {
       height: 100%;
       width: 10%;
+      position: absolute;
+
       &:hover {
         background-color: rgba(0, 0, 0, 0.3);
+        i {
+          display: block;
+          position: absolute;
+          top:50%;
+        }
       }
-      position: absolute;
+      i {
+        font-size: 32px;
+        display: none;
+      }
     }
 
     .next_img {
       right: 0;
       top: 0;
+      i {
+        right: 15%;
+      }
     }
 
     .prev_img {
       left: 0;
+      i {
+        left: 15%;
+      }
     }
   }
 }

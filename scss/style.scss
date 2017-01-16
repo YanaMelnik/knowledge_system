@@ -1,3 +1,5 @@
+$fa-font-path: "/fonts";
+
 @import "mixin.scss";
 @import "variables.scss";
 @import "scaffolding.scss";
@@ -18,4 +20,6 @@
 @import "slider.scss";
 @import "../node_modules/slick-carousel/slick/slick.scss";
 @import "../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
 

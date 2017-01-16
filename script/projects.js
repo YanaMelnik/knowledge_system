@@ -31,9 +31,17 @@ function Projects() {
 
     function showProject(projectId) {
         var project = findProject(projectId);
+        project.next_project_id = findNextProjectId(projectId);
+        project.prev_project_id = findPreviousProjectId(projectId);
+
         var output = Mustache.render($('#galleryPreview').html(), project);
         var preview = $('#container').find('.preview');
         preview.html(output);
+        $('#container').find('.change_img').click(function (e) {
+            e.stopPropagation();
+            showProject(+$(this).data('project-id'));
+            return false;
+        });
         $('.dark_background').click(function () {
             preview.empty();
         })
@@ -43,6 +51,18 @@ function Projects() {
         return state.projects.filter(function (project) {
             return project.id === projectId;
         })[0];
+    }
+
+    function findPreviousProjectId(projectId) {
+        if (findProject(projectId - 1))
+            return projectId - 1;
+        return state.projects[state.projects.length - 1].id;
+    }
+
+    function findNextProjectId(projectId) {
+        if (findProject(projectId + 1))
+            return projectId + 1;
+        return state.projects[0].id;
     }
 
     function render() {

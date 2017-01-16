@@ -2,6 +2,7 @@
   "name": "knowledge_system",
   "version": "1.0.0",
   "dependencies": {
+    "font-awesome": "4.7.0",
     "mustache": "^2.3.0",
     "slick-carousel": "^1.6.0"
   }
