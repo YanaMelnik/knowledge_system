@@ -3,11 +3,9 @@ function skills(selector) {
         type: 'GET',
         url: '/skills',
         success: function (data) {
-            console.log("do it");
             var output = Mustache.render($("#skills").html(), data);
 
-            console.log($(selector));
-            $(selector).prepend(output);
+            $(selector).html(output);
         },
         error: function () {
             alert('Error');

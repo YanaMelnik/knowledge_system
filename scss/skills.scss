@@ -64,16 +64,22 @@
     position: absolute;
     background-color: $bg-information;
     //display: none;
+    top: 10%;
+    left: 17%;
     height: 70%;
-    overflow: scroll;
+    overflow-y: scroll;
 
     box-sizing: border-box;
-    border: 1px solid #a4e9a3;
+    border: 5px solid #0ebdc4;
     @include container;
 
     @media #{$mobile-widths-only} {
       width: 70%;
-    text-align: center;
+    }
+
+    .sphere_type{
+      box-sizing: border-box;
+      border-bottom: 3px solid white;
     }
 
     .level {
@@ -82,6 +88,7 @@
 
     .sphere {
       cursor: pointer;
+      background-color: #c6e3e6;
       //@include button;
     }
 
@@ -92,7 +99,9 @@
     .save_skills {
       @include buttonSave;
       width: 100%;
-      padding: 2%;
+      padding: 1%;
+      font-weight: bold;
+
     }
   }
 

@@ -56,10 +56,14 @@ function EmployeeComponent(user) {
                     var userLevel = $(item).data('user-level');
                     $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
                 });
-                console.log("do it5");
-                container.find('.add_skills').click(function (obj) {
-                    skills('#container .skills');
+                container.find('.add_skills').click(function () {
+                    skills('#container .add_new_skills');
                 });
+
+                console.log($('#container .dark_background'));
+                $('#container .dark_background').click(function () {
+                    $('#container .add_new_skills').empty();
+                })
 
 
             },
