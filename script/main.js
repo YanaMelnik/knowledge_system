@@ -12,6 +12,9 @@ function render() {
             if(state.role==="employee"){
                 new EmployeeComponent(user);
             }
+            if(state.role==="manager"){
+                new ManagerComponent(user);
+            }
         });
     }
 }

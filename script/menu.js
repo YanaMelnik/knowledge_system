@@ -24,14 +24,20 @@ function MenuComponent(menuCallback) {
 
     menu.find('.menu_item').click(function () {
         menu.find('.menu_item').removeClass('main_nav_item-active');
-        $(this).addClass('main_nav_item-active');
+        menu.find('.main_nav_item').removeClass('main_nav_item-active');
+
+        if ($(this).hasClass('main_nav_item')) {
+            $(this).addClass('main_nav_item-active');
+        } else {
+            $(this).parents('.main_nav_item').addClass('main_nav_item-active');
+        }
         menuCallback($(this).data('menu-item-name'));
     });
 
-    menu.find('.subnav').click(function () {
-        menu.find('.menu_item').removeClass('main_nav_item-active');
-        $(this).parent('.menu_nav_item').addClass('main_nav_item-active'); //разобраться с проблемой активного пункта меню мобильная версия
-    })
+    // menu.find('.subnav').click(function () {
+    //     menu.find('.menu_item').removeClass('main_nav_item-active');
+    //     $(this).parent('.menu_nav_item').addClass('main_nav_item-active'); //разобраться с проблемой активного пункта меню мобильная версия
+    // })
 }
 
 

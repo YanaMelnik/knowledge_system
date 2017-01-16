@@ -192,6 +192,107 @@
         </div>
     </div>
 </div>
+<div id="managerComponent" class="template">
+    <header>
+        <nav>
+            <div class="head_nav">
+                <div class="head_nav__wrapper">
+                    <img src="/images/slider_1.png" class="logo" alt="Logo of company">
+                    <div class="profile">
+                        <img src="/images/slider_1.png" class="profile_photo" id="profile_photo" alt="Your's photo">
+                        <ul class="profile_menu">
+                            <li class="exit">Exit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main_nav main-nav--closed">
+                <button class="main_nav__toggle " type="button">Open menu</button>
+                <div class="main_nav__wrapper">
+                    <ul class="main_nav__items">
+                        <li class="main_nav_item menu_item main_nav_item-active" data-menu-item-name="general">
+                            <a href="#" class="main_nav_item-link" >General</a>
+                        </li>
+                        <li class="main_nav_item menu_item" data-menu-item-name="team">
+                            <a href="#" class="main_nav_item-link">My Team</a>
+                        </li>
+                        <li class="main_nav_item menu_item" data-menu-item-name="contacts">
+                            <a href="#" class="main_nav_item-link">Contacts</a>
+                        </li>
+                    </ul>
+                    <ul class="profile_menu">
+                        <li class="exit">Exit</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+
+        </div>
+    </main>
+    <footer>
+        <span>© Copyright - Yana Melnik 2017</span>
+    </footer>
+</div>
+<div id="generalManager" class="template">
+    <div class="shirt_card">
+        <img src="{{photo}}" class="profile_photo" id="users_photo" alt="Your/'s photo">
+        <div class="shirt_inform">
+            <span class="name_surname">{{name}}</span>
+            <br>
+            <span class="job-position">{{job_position}}</span>
+            <br>
+            <span class="phone">{{phone}}</span>
+        </div>
+    </div>
+    <div class="primary_information">
+        <h4 class="primary_header">Primary information</h4>
+        <table class="primary_items">
+            <tr>
+                <td class="primary_name">Status:</td>
+                <td class="primary_details">{{status}}</td>
+            </tr>
+            <tr>
+                <td class="primary_name">Production Category:</td>
+                <td class="primary_details">{{prod_category}}</td>
+            </tr>
+            <tr>
+                <td class="primary_name">Job Function Category:</td>
+                <td class="primary_details">{{job_position}}</td>
+            </tr>
+            <tr>
+                <td class="primary_name">Resource pull:</td>
+                <td class="primary_details">{{pull_resource}}</td>
+            </tr>
+            <tr>
+                <td class="primary_name">Team</td>
+                <td class="primary_details">
+                    {{#team}}
+                    {{name}}<br>
+                    {{/team}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="myTeam" class="template">
+    <div class="team">
+        {{#team}}
+        <div class="worker">
+            <img src="{{photo}}" alt="employee" class="employee">
+            <div class="shirt_inform">
+                <span class="name_surname">{{name}}</span>
+                <br>
+                <span class="job-position">{{job_position}}</span>
+                <br>
+                <span class="phone">{{phone}}</span>
+            </div>
+        </div>
+        {{/team}}
+    </div>
+</div>
 <div id="container"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -203,6 +304,7 @@
 <script type="text/javascript" src="/script/menu.js"></script>
 <script type="text/javascript" src="/script/map.js"></script>
 <script type="text/javascript" src="/script/projects.js"></script>
+<script type="text/javascript" src="/script/managerUI.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvrHa8sHTOEGNfEvzbKpXR-Tlgunai8hw&">
 </script>
 

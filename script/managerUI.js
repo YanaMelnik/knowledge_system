@@ -1,9 +1,9 @@
-function EmployeeComponent(user) {
+function ManagerComponent(user) {
     var container = $('#container');
-    var employee = $('#employeeComponent');
+    var manager = $('#managerComponent');
     var state = {currentPage: "general"};
 
-    container.html(employee.html());
+    container.html(manager.html());
 
     render();
     new MenuComponent(function (menuItem) {
@@ -16,13 +16,12 @@ function EmployeeComponent(user) {
             case 'general':
                 renderGeneral();
                 break;
-            case 'skills':
-                renderSkills();
-                break;
-            case 'projects':
-                new Projects();
+            case 'team':
+                console.log('hello contacts!');
+                renderTeam();
                 break;
             case 'contacts':
+                console.log('hello contacts!');
                 renderContact();
                 break;
 
@@ -34,7 +33,7 @@ function EmployeeComponent(user) {
             type: 'GET',
             url: '/employee/' + user.id,
             success: function (data) {
-                var output = Mustache.render($('#generalEmployee').html(), data);
+                var output = Mustache.render($('#generalManager').html(), data);
                 container.find('.container').html(output);
             },
             error: function () {
@@ -45,17 +44,16 @@ function EmployeeComponent(user) {
         });
     }
 
-    function renderSkills() {
+    function renderTeam() {
         $.ajax({
             type: 'GET',
-            url: '/employee/' + user.id + "/skills",
+            url: '/employee/3',
             success: function (data) {
-                var output = Mustache.render($('#skillsEmployee').html(), data);
+                console.log('hello!');
+                var output = Mustache.render($('#myTeam').html(), data);
                 container.find('.container').html(output);
-                container.find('.sphere_levels').each(function (index, item) {
-                    var userLevel = $(item).data('user-level');
-                    $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
-                })
+
+
             },
             error: function () {
                 alert('Error');
@@ -68,8 +66,10 @@ function EmployeeComponent(user) {
     function renderContact() {
         $.ajax({
             type: 'GET',
-            url: '/employee/' + user.id,
+            url: '/employee/3',
             success: function (data) {
+                console.log('hello contacts!');
+
                 var lat = data.office.lat;
                 var lng = data.office.lng;
 

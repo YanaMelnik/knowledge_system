@@ -1,4 +1,4 @@
-function initMap(lat, lng) {
+function Map(lat, lng) {
     var center = {lat: +lat, lng: +lng};
 
 
@@ -140,7 +140,7 @@ function initMap(lat, lng) {
     map.setMapTypeId('map_style');
 
 
-    function addMarker(name, coordinateLat, coordinateLng) {
+    this.addMarker = function(name, coordinateLat, coordinateLng) {
         var worker1 = new google.maps.Marker({
             position: {lat: +coordinateLat, lng: +coordinateLng},
             map: map,

@@ -12,10 +12,11 @@ function LoginComponent(loginCallback) {
         dots: true,
         arrows: false,
         pauseOnDotsHover: true
-
     });
+
     function doLogin() {
         container.find('.enter-form').hide();
+
         var login = container.find('input[name="login"]').val();
         var password = container.find('input[name="password"]').val();
         var loginData = {
@@ -36,12 +37,8 @@ function LoginComponent(loginCallback) {
             dataType: 'json',
             contentType: 'application/json'
         });
-
-
     }
-
     container.find('#enterSite').click(doLogin);
-
 }
 
 
