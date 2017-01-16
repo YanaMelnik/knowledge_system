@@ -55,7 +55,13 @@ function EmployeeComponent(user) {
                 container.find('.sphere_levels').each(function (index, item) {
                     var userLevel = $(item).data('user-level');
                     $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
-                })
+                });
+                console.log("do it5");
+                container.find('.add_skills').click(function (obj) {
+                    skills('#container .skills');
+                });
+
+
             },
             error: function () {
                 alert('Error');

@@ -28,12 +28,12 @@
 
   .sphere_knowledge {
     margin: 5px 5px;
-
   }
 
   .level {
     margin: 0 1%;
     padding: 3px 7px;
+    cursor: pointer;
 
     color: #737673;
     display: none;
@@ -62,9 +62,17 @@
 
   .new_skills {
     position: absolute;
-    @include container;
     background-color: $bg-information;
-    display: none;
+    //display: none;
+
+    box-sizing: border-box;
+    border: 1px solid #a4e9a3;
+    @include container;
+
+    @media #{$mobile-widths-only} {
+      width: 70%;
+    text-align: center;
+    }
 
     .level {
       display: inline;
@@ -72,7 +80,7 @@
 
     .sphere {
       cursor: pointer;
-      @include button;
+      //@include button;
     }
 
     .sphere_levels {
@@ -81,7 +89,6 @@
 
     .save_skills {
       @include buttonSave;
-      @include container;
       width: 100%;
       padding: 2%;
     }
@@ -93,3 +100,6 @@
     }
   }
 }
+
+
+

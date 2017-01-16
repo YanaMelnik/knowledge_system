@@ -124,6 +124,7 @@
 </div>
 <div id="skillsEmployee" class="template">
     <div class="skills">
+
         <h4 class="skills_header">My skills</h4>
         <div class="my_skills">
             <input type="button" value="Add New Skills" name="addSkills" class="add_skills">
@@ -297,6 +298,28 @@
         {{/team}}
     </div>
 </div>
+<div id="skills" class="template">
+    <div class="new_skills">
+        {{#.}}
+        <div class="sphere_type">
+            <h5 class="sphere">{{sphere}}</h5>
+            {{#skills}}
+            <ul class="sphere_knowledges">
+                <li class="sphere_knowledge">
+                    <span class="sphere_name">{{name}}</span>
+                    <div class="sphere_levels">
+                        <span class="level">Adv</span>
+                        <span class="level">Interm</span>
+                        <span class="level">Elem</span>
+                    </div>
+                </li>
+            </ul>
+            {{/skills}}
+        </div>
+        {{/.}}
+        <input type="button" value="Save Changes" name="Save" class="save_skills">
+    </div>
+</div>
 <div id="container"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -309,6 +332,7 @@
 <script type="text/javascript" src="/script/map.js"></script>
 <script type="text/javascript" src="/script/projects.js"></script>
 <script type="text/javascript" src="/script/managerUI.js"></script>
+<script type="text/javascript" src="/script/skills.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvrHa8sHTOEGNfEvzbKpXR-Tlgunai8hw&">
 </script>
 
