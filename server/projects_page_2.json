@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": 7,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "EPAM",
+      "description": "Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 8,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Lifecell",
+      "description": "Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 9,
+      "photo": "/images/gallery/project_02.jpg",
+      "name": "ManaMana",
+      "description": "In companions inhabiting mr principles at insensible do."
+    },
+    {
+      "id": 10,
+      "photo": "/images/gallery/project_02.jpg",
+      "name": "KitKat",
+      "description": "Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 11,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Duracell",
+      "description": "Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 12,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "H&M",
+      "description": "In companions inhabiting mr principles at insensible do."
+    }
+  ],
+  "page": 2,
+  "pages": 3
+}

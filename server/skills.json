@@ -1,0 +1,66 @@
+{
+  "1": [
+    {
+      "sphere": "IDE",
+      "skills": [
+        {
+          "name": "WebStorm",
+          "level": "1"
+        },
+        {
+          "name": "Sublime Text",
+          "level": "0"
+        }
+      ]
+    },
+    {
+      "sphere": "Front End",
+      "skills": [
+        {
+          "name": "HTML",
+          "level": "1"
+        },
+        {
+          "name": "CSS",
+          "level": "0"
+        }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "sphere": "IDE",
+      "skills": [
+        {
+          "name": "WebStorm",
+          "level": "2"
+        },
+        {
+          "name": "Atom",
+          "level": "1"
+        },
+        {
+          "name": "Vim",
+          "level": "2"
+        }
+      ]
+    },
+    {
+      "sphere": "Front End",
+      "skills": [
+        {
+          "name": "HTML",
+          "level": "2"
+        },
+        {
+          "name": "Sass",
+          "level": "1"
+        },
+        {
+          "name": "NodeJS",
+          "level": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -64,6 +64,8 @@
     position: absolute;
     background-color: $bg-information;
     //display: none;
+    height: 70%;
+    overflow: scroll;
 
     box-sizing: border-box;
     border: 1px solid #a4e9a3;

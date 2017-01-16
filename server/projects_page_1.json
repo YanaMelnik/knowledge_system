@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Microsoft web site",
+      "description": "Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 2,
+      "photo": "/images/gallery/project_02.jpg",
+      "name": "Cisco",
+      "description": "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in. Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 3,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Nestle",
+      "description": "Promotion an ourselves up otherwise my. High what each snug rich far yet easy. In companions inhabiting mr principles at insensible do."
+    },
+    {
+      "id": 4,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Rolls Royce",
+      "description": "Saw yet kindness admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 5,
+      "photo": "/images/gallery/project_02.jpg",
+      "name": "Hochland",
+      "description": "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my exercise so in. Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 6,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Hessen",
+      "description": "Promotion an ourselves up otherwise my. High what each snug rich far yet easy. In companions inhabiting mr principles at insensible do."
+    }
+  ],
+  "page": 1,
+  "pages": 3
+}

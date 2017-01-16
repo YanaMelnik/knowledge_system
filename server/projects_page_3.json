@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "id": 13,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Volkswagen",
+      "description": "Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 14,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Mercedes",
+      "description": "Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 15,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Butafor",
+      "description": "In companions inhabiting mr principles at insensible do."
+    },
+    {
+      "id": 16,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Berimor",
+      "description": "Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods."
+    },
+    {
+      "id": 17,
+      "photo": "/images/gallery/project_03.jpg",
+      "name": "Spider Man",
+      "description": "Procured shutters mr it feelings. To or three offer house begin taken am at."
+    },
+    {
+      "id": 18,
+      "photo": "/images/gallery/project_01.jpg",
+      "name": "Rusalochka",
+      "description": "In companions inhabiting mr principles at insensible do."
+    }
+  ],
+  "page": 3,
+  "pages": 3
+}

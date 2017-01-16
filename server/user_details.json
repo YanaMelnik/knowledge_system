@@ -1,0 +1,76 @@
+{
+  "1": {
+    "photo": "/images/profile/1.png",
+    "name": "John Doe",
+    "job_position": "Front End Developer",
+    "phone": "+38 093 99 99 999",
+    "status": "Full-time",
+    "prod_category": "Production",
+    "manager": "Peter Pan",
+    "office": {
+      "lat": "50.3974599",
+      "lng": "30.5083627"
+    }
+  },
+  "2": {
+    "photo": "/images/profile/2.png",
+    "name": "Jon Snow",
+    "job_position": "Front End Developer",
+    "phone": "+38 063 77 77 777",
+    "status": "Full-time",
+    "prod_category": "Pre-Production",
+    "manager": "Peter Pan",
+    "office": {
+      "lat": "50.4410537",
+      "lng": "30.518838"
+    }
+  },
+  "3": {
+    "photo": "/images/profile/3.png",
+    "name": "Super Manager",
+    "job_position": "Manager",
+    "phone": "+38 063 77 55 555",
+    "status": "Full-time",
+    "prod_category": "Production",
+    "pull_resource": "3",
+    "team": [
+      {
+        "name": "Samuel L. Jackson",
+        "job_position":"Front End Developer",
+        "photo":"/images/profile/5.jpg",
+        "phone":"+38 099 99 99 099",
+        "id":"4",
+        "office": {
+          "lat": "50.4116525",
+          "lng": "30.522691"
+        }
+      },
+      {
+        "name": "Jennifer Jason Leigh",
+        "job_position":"Front End Developer",
+        "photo":"/images/profile/6.jpg",
+        "phone":"+38 077 77 77 077",
+        "id":"5",
+        "office": {
+          "lat": "50.4346368",
+          "lng": "30.557254"
+        }
+      },
+      {
+        "name": "Kurt Russell",
+        "job_position":"Front End Developer",
+        "photo":"/images/profile/7.jpg",
+        "phone":"+38 069 66 66 066",
+        "id":"6",
+        "office": {
+          "lat": "50.447831",
+          "lng": "30.492484"
+        }
+      }
+    ],
+    "office": {
+      "lat": "50.4410537",
+      "lng": "30.618838"
+    }
+  }
+}
