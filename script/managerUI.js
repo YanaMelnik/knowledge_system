@@ -52,8 +52,6 @@ function ManagerComponent(user) {
                 console.log('hello!');
                 var output = Mustache.render($('#myTeam').html(), data);
                 container.find('.container').html(output);
-
-
             },
             error: function () {
                 alert('Error');
@@ -75,7 +73,11 @@ function ManagerComponent(user) {
 
                 container.find('.container').html($("#contact").html());
 
-                Map(lat, lng);
+                var map = new Map(lat, lng);
+
+                data.team.forEach(function (elem) {
+                    map.addMarker(elem.name, +elem.office.lat, +elem.office.lng);
+                })
             },
             error: function () {
                 alert('Error');

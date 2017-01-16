@@ -4,7 +4,7 @@ function Map(lat, lng) {
 
     var map = new google.maps.Map(document.querySelector('.container #map'), {
         center: center,
-        zoom: 13,
+        zoom: 10,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }
@@ -151,8 +151,5 @@ function Map(lat, lng) {
             }
         });
     }
-
-    addMarker('Yana Melnik', '55.3974579', '30.5083626');
-
 }
 
