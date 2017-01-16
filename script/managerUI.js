@@ -39,8 +39,7 @@ function ManagerComponent(user) {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 
@@ -56,8 +55,7 @@ function ManagerComponent(user) {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 
@@ -82,8 +80,7 @@ function ManagerComponent(user) {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 }

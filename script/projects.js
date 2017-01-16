@@ -24,8 +24,7 @@ function Projects() {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 

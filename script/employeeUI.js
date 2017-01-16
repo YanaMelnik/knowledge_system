@@ -40,8 +40,7 @@ function EmployeeComponent(user) {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 
@@ -60,8 +59,7 @@ function EmployeeComponent(user) {
             error: function () {
                 alert('Error');
             },
-            dataType: 'json',
-            contentType: 'application/json'
+            dataType: 'json'
         });
     }
 }

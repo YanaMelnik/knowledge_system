@@ -1,4 +1,4 @@
-function selectSkills(selector, skillsModificationCallback) {
+function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
     var $container = $('#container');
 
     $.ajax({
@@ -10,8 +10,7 @@ function selectSkills(selector, skillsModificationCallback) {
         error: function () {
             alert('Error');
         },
-        dataType: 'json',
-        contentType: 'application/json'
+        dataType: 'json'
     });
 
     function render(allSkills) {
@@ -24,7 +23,32 @@ function selectSkills(selector, skillsModificationCallback) {
             $(selector).empty();
         });
         listenForSkillSelection();
+        preselect();
+    }
 
+    function preselect() {
+        if (preselectedSkills) {
+            var skillsTree = {};
+            preselectedSkills.forEach(function (sphere) {
+                var sphereTree = {};
+                skillsTree[sphere.sphere] = sphereTree;
+                sphere.skills.forEach(function (skill) {
+                    sphereTree[skill.name] = skill.level;
+                })
+            })
+        }
+        console.log(skillsTree);
+        $(selector).find('.sphere_knowledge').each(function (index, item) {
+            var $item = $(item);
+            var sphere = $item.data('skill-sphere');
+            var skill = $item.data('skill-name');
+            if (skillsTree[sphere]) {
+                var level = skillsTree[sphere][skill];
+                if (level) {
+                    $item.find('[data-skill-level=' + level + ']').addClass('level_active');
+                }
+            }
+        })
     }
 
     function listenForSkillSelection() {

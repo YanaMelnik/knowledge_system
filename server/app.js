@@ -45,6 +45,43 @@ app.get('/projects', function (req, res) {
     }
     res.sendFile(__dirname + '/projects_page_' + page + '.json');
 });
+var updateSkillRegexp = /\/skills\/update\/(\d+)/;
+app.post(updateSkillRegexp, function (req, res) {
+    var userId = updateSkillRegexp.exec(req.path)[1];
+    var userSkills = data.skills[userId];
+    if (!userSkills) {
+        userSkills = {};
+        data.skills[userId] = userSkills;
+    }
+    function findSphere(sphereName) {
+        var foundSphere = userSkills.filter(function (item) {
+            return item.sphere === sphereName;
+        })[0];
+        if (!foundSphere) {
+            foundSphere = {sphere: sphereName, skills:[]};
+            userSkills.push(foundSphere);
+        }
+        return foundSphere;
+    }
+    function findSkill(skills, name) {
+        var foundSkill = skills.filter(function (item) {
+            return item.name === name;
+        })[0];
+        if (!foundSkill) {
+            foundSkill = {name: name};
+            skills.push(foundSkill);
+        }
+        return foundSkill;
+    }
+
+    req.body.forEach(function (item) {
+        var sphere = findSphere(item.sphere);
+        var skill = findSkill(sphere.skills, item.name);
+        skill.level = item.level + '';
+    });
+
+    res.json(userSkills);
+});
 
 
 function returnStatic(path, contentType) {

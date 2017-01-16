@@ -303,8 +303,8 @@
             {{#.}}
             <div class="sphere_type">
                 <h5 class="sphere">{{sphere}}</h5>
-                {{#skills}}
                 <ul class="sphere_knowledges">
+                {{#skills}}
                     <li class="sphere_knowledge" data-skill-sphere="{{sphere}}" data-skill-name="{{name}}">
                         <span class="sphere_name">{{name}}</span>
                         <div class="sphere_levels">
@@ -313,8 +313,8 @@
                             <span class="level" data-skill-level="2">Advance</span>
                         </div>
                     </li>
-                </ul>
                 {{/skills}}
+                </ul>
             </div>
             {{/.}}
             <input type="button" value="Save Changes" name="Save" class="save_skills">
