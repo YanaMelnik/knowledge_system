@@ -17,7 +17,7 @@ function EmployeeComponent(user) {
                 renderGeneral();
                 break;
             case 'skills':
-                renderSkills();
+                new Skills(user.id);
                 break;
             case 'projects':
                 new Projects();
@@ -45,29 +45,6 @@ function EmployeeComponent(user) {
         });
     }
 
-    function renderSkills() {
-        $.ajax({
-            type: 'GET',
-            url: '/employee/' + user.id + "/skills",
-            success: function (data) {
-                var output = Mustache.render($('#skillsEmployee').html(), data);
-                container.find('.container').html(output);
-                container.find('.sphere_levels').each(function (index, item) {
-                    var userLevel = $(item).data('user-level');
-                    $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
-                });
-                container.find('.add_skills').click(function () {
-                    skills('#container .add_new_skills');
-                });
-            },
-            error: function () {
-                alert('Error');
-            },
-            dataType: 'json',
-            contentType: 'application/json'
-        });
-    }
-
     function renderContact() {
         $.ajax({
             type: 'GET',
@@ -78,7 +55,7 @@ function EmployeeComponent(user) {
 
                 container.find('.container').html($("#contact").html());
 
-                Map(lat, lng);
+                new Map(lat, lng);
             },
             error: function () {
                 alert('Error');

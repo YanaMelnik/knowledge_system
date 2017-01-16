@@ -1,16 +1,19 @@
-function skills(selector) {
+function Skills(userId) {
+    var container = $('#container');
+
     $.ajax({
         type: 'GET',
-        url: '/skills',
+        url: '/employee/' + userId + "/skills",
         success: function (data) {
-            var output = Mustache.render($("#skills").html(), data);
-            $(selector).html(output);
-            $('.new_skills').click(function (evt) {
-                evt.stopPropagation();
+            var output = Mustache.render($('#skillsEmployee').html(), data);
+            container.find('.container').html(output);
+            container.find('.sphere_levels').each(function (index, item) {
+                var userLevel = $(item).data('user-level');
+                $(item).find('.level[data-level="' + userLevel + '"]').addClass('level_active');
             });
-            $('#container').find('.dark_background').click(function () {
-                $(selector).empty();
-            })
+            container.find('.add_skills').click(function () {
+                selectSkills('#container .add_new_skills');
+            });
         },
         error: function () {
             alert('Error');

@@ -307,12 +307,12 @@
                 <h5 class="sphere">{{sphere}}</h5>
                 {{#skills}}
                 <ul class="sphere_knowledges">
-                    <li class="sphere_knowledge">
+                    <li class="sphere_knowledge" data-skill-sphere="{{sphere}}" data-skill-name="{{name}}">
                         <span class="sphere_name">{{name}}</span>
                         <div class="sphere_levels">
-                            <span class="level">Adv</span>
-                            <span class="level">Interm</span>
-                            <span class="level">Elem</span>
+                            <span class="level" data-skill-level="0">Elementary</span>
+                            <span class="level" data-skill-level="1">Middle</span>
+                            <span class="level" data-skill-level="2">Advance</span>
                         </div>
                     </li>
                 </ul>
@@ -335,6 +335,7 @@
 <script type="text/javascript" src="/script/map.js"></script>
 <script type="text/javascript" src="/script/projects.js"></script>
 <script type="text/javascript" src="/script/managerUI.js"></script>
+<script type="text/javascript" src="/script/selectSkills.js"></script>
 <script type="text/javascript" src="/script/skills.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvrHa8sHTOEGNfEvzbKpXR-Tlgunai8hw&">
 </script>
