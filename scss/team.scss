@@ -2,6 +2,16 @@
   @include container;
   padding: 1%;
   overflow: hidden;
+  margin-top: 15%;
+
+  .sort, .filter {
+    @include buttonQuery;
+    width: 100%;
+    padding: 3%;
+    font-weight: bold;
+  }
+
+
 
   .worker {
     background-color: $bg-information;
@@ -77,6 +87,16 @@
     .worker:nth-child(even) {
       float: right;
       margin-left: 0;
+    }
+
+    .sort{
+      float: left;
+      width: 50%;
+    }
+
+    .filter{
+      float: right;
+      width: 50%;
     }
   }
 }

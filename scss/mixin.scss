@@ -30,7 +30,8 @@
   box-shadow: inset 0 1px 0 0 #ffffff;
   background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
   background-color: #f9f9f9;
-  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  border: 1px solid #e9e9e9;
   text-shadow: 0 1px 0 #ffffff;
 
   &:hover {
@@ -39,16 +40,32 @@
   }
 }
 
+@mixin buttonQuery {
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: inset 0 1px 0 0 #ffffff;
+  background: linear-gradient(to bottom, rgba(216, 248, 251, 0.69) 5%, #c6e3e6 100%);
+  background-color: #c6e3e6;
+  box-sizing: border-box;
+  border: 1px solid #c6e3e6;
+  text-shadow: 0 1px 0 #ffffff;
+
+  &:hover {
+    background: linear-gradient(to bottom, #c6e3e6 5%, rgba(216, 248, 251, 0.69) 100%);
+    background-color: #c6e3e6;
+  }
+}
+
 @mixin buttonSave {
   @include button;
   background: linear-gradient(to bottom, #e3f9e2 5%, #a4e9a3 100%);
-  background-color: #f9f9f9;
-  border: 1px solid #dcdcdc;
+  background-color: #e3f9e2;
+  border: 1px solid #a4e9a3;
 
 
   &:hover {
     background: linear-gradient(to bottom, #a4e9a3 5%, #e3f9e2 100%);
-    background-color: #e9e9e9;
+    background-color: #a4e9a3;
   }
 }
 

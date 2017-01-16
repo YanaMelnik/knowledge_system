@@ -28,14 +28,9 @@
                 <section class="enter_form__error">
                     Login or password is incorrect
                 </section>
-                <input type="text" placeholder="Login" name="login" autofocus tabindex="1" maxlength="25">
-                <br>
-                <input type="password" placeholder="Password" name="password" tabindex="2" maxlength="20">
-                <br>
-                <input type="button" class="button" id="fb_social" value="Enter with Facebook">
-                <br>
-                <br>
-                <input type="button" class="button" id="enterSite" value="Enter" tabindex="3">
+                <input type="text" placeholder="Login" name="login" autofocus tabindex="1" maxlength="25"><br>
+                <input type="password" placeholder="Password" name="password" tabindex="2" maxlength="20"><br>
+                <br><input type="button" class="button" id="enterSite" value="Enter" tabindex="3">
             </form>
         </div>
     </div>
@@ -285,6 +280,9 @@
 </div>
 <div id="myTeam" class="template">
     <div class="team">
+
+        <input type="button" name="sort" value="Sort by name" class="sort">
+        <input type="button" name="filter" value="Filter" class="filter">
         {{#team}}
         <div class="worker">
             <img src="{{photo}}" alt="employee" class="employee">

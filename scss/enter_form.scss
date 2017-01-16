@@ -8,6 +8,16 @@
   background-color: #3b5998;
   font-size: 2em;
 
+  .button{
+    @include button;
+    color: #197598;
+    border-radius: 3px;
+
+    &:hover{
+      border: 2px solid #82a9d8;
+    }
+  }
+
   .centered {
     display: inline-block;
     vertical-align: middle;
