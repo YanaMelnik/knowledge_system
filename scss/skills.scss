@@ -63,7 +63,6 @@
   .new_skills {
     position: absolute;
     background-color: $bg-information;
-    //display: none;
     top: 10%;
     left: 17%;
     height: 70%;
@@ -76,6 +75,19 @@
     @media #{$mobile-widths-only} {
       width: 70%;
     }
+
+    .fa-times{
+      color: red;
+      cursor: pointer;
+      position: absolute;
+      top: 0.3vw;
+      right: 0.9vw;
+
+      &:hover{
+        color: #9d0908;
+      }
+    }
+
 
     .sphere_type{
       box-sizing: border-box;

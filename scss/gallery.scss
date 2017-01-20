@@ -1,6 +1,9 @@
 .gallery {
   @include container;
   overflow: hidden;
+  .gallery_header {
+    @include namePage;
+  }
 }
 
 .gallery_projects {
@@ -28,7 +31,6 @@
   }
 }
 
-
 .dark_background {
   width: 100vw;
   height: 100vh;
@@ -37,6 +39,7 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+  cursor: pointer;
 
   .img_big {
 
@@ -49,8 +52,23 @@
     border: 3px solid #d1d1d1;
     opacity: 1;
 
+    .fa-times{
+      color: red;
+      cursor: pointer;
+      position: absolute;
+      top: 1vw;
+      right: 3vw;
+      z-index: 1;
+
+      &:hover{
+        color: #9d0908;
+      }
+    }
+
+
     div {
       @include clearfix;
+      cursor: default;
     }
 
     .img {
@@ -81,7 +99,7 @@
         i {
           display: block;
           position: absolute;
-          top:50%;
+          top: 50%;
         }
       }
       i {
@@ -159,8 +177,8 @@
     color: black;
   }
 
-  .page_active{
-    a{
+  .page_active {
+    a {
       text-decoration: underline;
       color: #197598;
       font-weight: bold;

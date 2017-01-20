@@ -22,6 +22,9 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
         $container.find('.dark_background').click(function () {
             $(selector).empty();
         });
+        $container.find('.fa-times').click(function () {
+            $(selector).empty();
+        });
         listenForSkillSelection();
         preselect();
     }

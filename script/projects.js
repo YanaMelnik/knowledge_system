@@ -41,9 +41,18 @@ function Projects() {
             showProject(+$(this).data('project-id'));
             return false;
         });
-        $('.dark_background').click(function () {
+
+
+        $('#container').find('.img_big>div').click(function (evt) {
+            evt.stopPropagation();
+        });
+        $('#container').find('.dark_background').click(function () {
             preview.empty();
-        })
+        });
+        $('#container').find('.fa-times').click(function () {
+            preview.empty();
+        });
+
     };
 
     function findProject(projectId) {
