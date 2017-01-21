@@ -17,11 +17,9 @@ function ManagerComponent(user) {
                 renderGeneral();
                 break;
             case 'team':
-                console.log('hello contacts!');
                 new RenderTeam();
                 break;
             case 'contacts':
-                console.log('hello contacts!');
                 renderContact();
                 break;
 
@@ -50,8 +48,6 @@ function ManagerComponent(user) {
             type: 'GET',
             url: '/employee/3',
             success: function (data) {
-                console.log('hello contacts!');
-
                 var lat = data.office.lat;
                 var lng = data.office.lng;
 

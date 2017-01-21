@@ -1,7 +1,7 @@
 .primary_information{
   @include container;
   box-sizing: border-box;
-  background-color: $bg-information;
+  background-color: $bg-lightgrey;
 
   .primary_header{
     @include namePage;

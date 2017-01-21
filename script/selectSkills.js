@@ -4,9 +4,7 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
     $.ajax({
         type: 'GET',
         url: '/skills',
-        success: function (data) {
-            render(data);
-        },
+        success: render,
         error: function () {
             alert('Error');
         },
@@ -34,42 +32,43 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
             var skillsTree = {};
             preselectedSkills.forEach(function (sphere) {
                 var sphereTree = {};
-                skillsTree[sphere.sphere] = sphereTree;
+                var sphereName = sphere.sphere;
+                skillsTree[sphereName] = sphereTree;
                 sphere.skills.forEach(function (skill) {
                     sphereTree[skill.name] = skill.level;
                 })
+            });
+            console.log(skillsTree);
+            $(selector).find('.sphere_knowledge').each(function (index, item) {
+                var $item = $(item);
+                var sphere = $item.data('skill-sphere');
+                var skill = $item.data('skill-name');
+                if (skillsTree[sphere]) {
+                    var level = skillsTree[sphere][skill];
+                    if (level) {
+                        $item.find('[data-skill-level=' + level + ']').addClass('level_active');
+                    }
+                }
             })
         }
-        console.log(skillsTree);
-        $(selector).find('.sphere_knowledge').each(function (index, item) {
-            var $item = $(item);
-            var sphere = $item.data('skill-sphere');
-            var skill = $item.data('skill-name');
-            if (skillsTree[sphere]) {
-                var level = skillsTree[sphere][skill];
-                if (level) {
-                    $item.find('[data-skill-level=' + level + ']').addClass('level_active');
-                }
-            }
-        })
     }
 
     function listenForSkillSelection() {
-        var selectedSkills = [];
+        var skillsArray = [];
         $container.find('.new_skills .level').click(function () {
             $(this).parent().find('.level').removeClass('level_active');
             $(this).addClass('level_active');
 
             var selectedSkill = extractSelectedSkill(this);
-            selectedSkills = selectedSkills.filter(function (item) {
-                return !(item.sphere === selectedSkill.sphere && item.name === selectedSkill.name);
+            skillsArray = skillsArray.filter(function (item) {
+                return item.sphere !== selectedSkill.sphere || item.name !== selectedSkill.name;
             });
-            selectedSkills.push(selectedSkill);
+            skillsArray.push(selectedSkill);
         });
 
         $container.find('.save_skills').click(function () {
             $(selector).empty();
-            skillsModificationCallback(selectedSkills);
+            skillsModificationCallback(skillsArray);
         });
 
     }

@@ -5,10 +5,9 @@
   font-weight: bold;
 }
 
-
 .main_nav_item-link {
   text-decoration: none;
-  color: black;
+  color: #ffffff;
 
   display: block;
   padding: 12px 21px;
@@ -17,24 +16,24 @@
   line-height: 24px;
   text-transform: uppercase;
 
-  border-top: 1px solid #9a9a9a;
-  border-bottom: 1px solid #9a9a9a;
+  //border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 
   &:hover {
-    background-color: #cbcbcb;
-    border-top-color: #CBCBCB;
+    background-color: $bg-lightblue;
+    border-top-color: $bg-lightblue;
   }
 
   &:active {
-    color: #2c4598;
-    background-color: #CBCBCB;
-    border-top-color: #CBCBCB;
+    //color: #2c4598;
+    background-color: $bg-lightblue;
+    border-top-color: $bg-lightblue;
   }
 }
 
 .subnav_item {
-  color: #00007b;
-  background-color: #8b9dc3;
+  color: #000000;
+  background-color: $bg-darkgrey;
 
   display: block;
   padding: 0 21px;
@@ -45,21 +44,21 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #a5b9e7;
-    border-top-color: #a5b9e7;
+    background-color: $bg-lightgrey;
+    border-top-color: $bg-lightgrey;
   }
 
   &:active {
-    color: #2c4598;
-    background-color: #a5b9e7;
-    border-top-color: #a5b9e7;
+    color: #000000;
+    background-color: $bg-lightgrey;
+    border-top-color: $bg-lightgrey;
   }
 }
 
 .main_nav {
   @include container;
   position: relative;
-  background-color: #b3b3b3;
+  background-color: $bg-blue;
   z-index: 1000;
 }
 
@@ -73,17 +72,17 @@
   height: 50px;
 
   font-size: 0;
-  background-color: #747775;
+  background-color: $bg-lightgrey;
   cursor: pointer;
 
   border: none;
 
   &:hover {
-    background-color: #5b5d5b;
+    background-color: $bg-darkgrey;
   }
 
   &:active {
-    background-color: #5b5d5b;
+    background-color: $bg-darkgrey;
   }
 }
 
@@ -140,7 +139,16 @@
 
 .main_nav_item {
   box-sizing: border-box;
-  border: 1px solid #a1a1a1;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+
+  &:nth-child(1){
+    border-left: 2px solid #ffffff;
+  }
+
+  &:nth-child(3){
+    border-right: 2px solid #ffffff;
+  }
 }
 
 @media  #{$mobile-widths-only}{
@@ -162,7 +170,7 @@
     right: 0;
     left: 70px;
     height: 80vh;
-    background-color: #9a9a9a;
+    background-color: $bg-blue;
   }
 }
 
@@ -227,4 +235,8 @@
       display: none;
     }
   }
+}
+
+nav{
+  z-index: 1;
 }

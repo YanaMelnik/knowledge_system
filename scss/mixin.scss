@@ -24,6 +24,15 @@
   line-height: 3em;
 }
 
+@mixin errorMessage {
+  box-sizing: border-box;
+  border: 1px solid #ff4e06;
+  color: #ff4e06;
+  padding: 10px;
+  font-size: 0.7em;
+  margin: 10px;
+}
+
 @mixin button {
   cursor: pointer;
   font-weight: bold;

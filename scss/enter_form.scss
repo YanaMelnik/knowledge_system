@@ -5,16 +5,16 @@
   max-height: 100vh;
   text-align: center;
   line-height: 100vh;
-  background-color: #3b5998;
+  background-color: $bg-blue;
   font-size: 2em;
 
   .button{
     @include button;
-    color: #197598;
+    color: $bg-darkgrey;
     border-radius: 3px;
 
     &:hover{
-      border: 2px solid #82a9d8;
+      border: 2px solid $bg-lightgrey;
     }
   }
 
@@ -37,12 +37,8 @@
   }
 
   .enter_form__error {
-    border: 1px solid #810000;
-    color: #810000;
-    padding: 10px;
     display: none;
-    font-size: 0.7em;
-    margin: 0 10px;
+    @include errorMessage;
   }
 }
 

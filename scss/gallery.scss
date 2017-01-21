@@ -46,13 +46,20 @@
     margin: 0 auto;
     margin-top: 5vw;
     margin-bottom: 10vw;
-    width: 50%;
-    background-color: $bg-information;
+    width: 70%;
+    background-color: $bg-lightgrey;
     box-sizing: border-box;
     border: 3px solid #d1d1d1;
     opacity: 1;
 
-    .fa-times{
+    @media #{$table-widths} {
+      width: 60%;
+    }
+    @media #{$desktop-widths} {
+      width: 50%;
+    }
+
+    .fa-times {
       color: red;
       cursor: pointer;
       position: absolute;
@@ -60,11 +67,10 @@
       right: 3vw;
       z-index: 1;
 
-      &:hover{
+      &:hover {
         color: #9d0908;
       }
     }
-
 
     div {
       @include clearfix;
@@ -90,9 +96,16 @@
 
     .change_img {
       height: 100%;
-      width: 10%;
+      width: 30%;
       position: absolute;
       cursor: pointer;
+
+      @media #{$table-widths} {
+        width: 20%;
+      }
+      @media #{$desktop-widths} {
+        width: 10%;
+      }
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.3);

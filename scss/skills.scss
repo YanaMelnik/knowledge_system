@@ -1,7 +1,7 @@
 .skills {
   @include container;
   box-sizing: border-box;
-  background-color: $bg-information;
+  background-color: $bg-lightgrey;
 
   .sphere {
     text-align: center;
@@ -16,6 +16,7 @@
   .skills_header {
     @include namePage;
   }
+
 
   .sphere_knowledges {
     padding-left: 7%;
@@ -62,7 +63,7 @@
 
   .new_skills {
     position: absolute;
-    background-color: $bg-information;
+    background-color: $bg-lightgrey;
     top: 10%;
     left: 17%;
     height: 70%;

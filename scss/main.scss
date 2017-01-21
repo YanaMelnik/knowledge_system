@@ -1,5 +1,5 @@
 main {
-  margin-bottom: 60vw;
+  margin-bottom: 15vw;
 }
 
 
@@ -12,8 +12,8 @@ main {
 
 @media #{$desktop-widths} {
   main {
-    margin-top: 200px;
-
+    margin-top: 170px;
+    margin-bottom: 5vw;
   }
 }
 

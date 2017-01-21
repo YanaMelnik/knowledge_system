@@ -20,8 +20,8 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #808080;
-    border-top-color: #808080;
+    background-color: $bg-lightgrey;
+    border-top-color: $bg-lightgrey;
   }
 }
 
@@ -43,7 +43,6 @@
   .head_nav {
     width: auto;
     margin: 0;
-
   }
 
   .head_nav__wrapper {

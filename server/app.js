@@ -20,34 +20,53 @@ var users = {
     }
 };
 
-app.post('/login', function (req, res) {
-    var user = users[req.body.login + ":" + req.body.password];
+app.post('/login', function (request, response) {
+    var user = users[request.body.login + ":" + request.body.password];
     if (user) {
-        res.json(user);
+        response.json(user);
         return
     }
-    res.status(404).send("User not found");
+    response.status(404).send("User not found");
 });
 
 var detailRegexp = /\/employee\/(\d+)$/;
-app.get(detailRegexp, returnUserData(detailRegexp, 'userDetails'));
+app.get(detailRegexp, function (request, response) {
+    var employeeId = detailRegexp.exec(request.path)[1];
+    var userData = data['userDetails'][employeeId];
+    if (userData) {
+        response.json(userData);
+        return;
+    }
+    response.status(404).send('User not found')
+});
+
 
 var skillsRegexp = /\/employee\/(\d+)\/skills/;
-app.get(skillsRegexp, returnUserData(skillsRegexp, 'skills'));
-
-app.get('/skills', function (req, res) {
-    res.json(data.allSkills);
+app.get(skillsRegexp, function (request, response) {
+    var employeeId = skillsRegexp.exec(request.path)[1];
+    var userData = data['skills'][employeeId];
+    if (userData) {
+        response.json(userData);
+        return;
+    }
+    response.status(404).send('User not found')
 });
-app.get('/projects', function (req, res) {
-    var page = req.query.page;
+
+app.get('/skills', function (request, response) {
+    response.json(data.allSkills);
+});
+
+app.get('/projects', function (request, response) {
+    var page = request.query.page;
     if (!page) {
         page = 1;
     }
-    res.sendFile(__dirname + '/projects_page_' + page + '.json');
+    response.sendFile(__dirname + '/projects_page_' + page + '.json');
 });
+
 var updateSkillRegexp = /\/skills\/update\/(\d+)/;
-app.post(updateSkillRegexp, function (req, res) {
-    var userId = updateSkillRegexp.exec(req.path)[1];
+app.post(updateSkillRegexp, function (request, response) {
+    var userId = updateSkillRegexp.exec(request.path)[1];
     var userSkills = data.skills[userId];
     if (!userSkills) {
         userSkills = {};
@@ -74,38 +93,26 @@ app.post(updateSkillRegexp, function (req, res) {
         return foundSkill;
     }
 
-    req.body.forEach(function (item) {
+    request.body.forEach(function (item) {
         var sphere = findSphere(item.sphere);
         var skill = findSkill(sphere.skills, item.name);
         skill.level = item.level + '';
     });
 
-    res.json(userSkills);
+    response.json(userSkills);
 });
 
 
 function returnStatic(path, contentType) {
-    return function (req, res) {
+    return function (request, response) {
         fs.readFile(__dirname + '/../' + path, function (err, data) {
             if (err) {
-                res.send(err);
+                response.send(err);
                 return;
             }
-            res.type(contentType || "text/javascript");
-            res.send(data);
+            response.type(contentType || "text/javascript");
+            response.send(data);
         })
-    }
-}
-
-function returnUserData(pathPattern, dataName) {
-    return function(req, res) {
-        var employeeId = pathPattern.exec(req.path)[1];
-        var userData = data[dataName][employeeId];
-        if (userData) {
-            res.json(userData);
-            return;
-        }
-        res.status(404).send('User not found')
     }
 }
 
@@ -132,6 +139,7 @@ initData([
     {variable: "skills", json: '/skills.json'},
     {variable: "allSkills", json: '/allSkills.json'}
 ]);
+
 app.use(express.static(__dirname + '/../'));
 app.get('/', returnStatic('html/index.html', "html"));
 app.get('/lib/mustache.min.js', returnStatic('node_modules/mustache/mustache.min.js'));
@@ -140,4 +148,44 @@ app.get('/fonts/fontawesome-webfont.woff2', returnStatic('node_modules/font-awes
 var port = 9999;
 app.listen(port, function () {
     console.log("Server has been started on port " + port);
+});
+
+app.post('/manager/filter', function (request, response) {
+
+    var condition = request.body;
+    var objUserSkills = data.skills;
+    var result = [];
+
+    for (var userId in objUserSkills ){
+        if (matchesFilter(objUserSkills[userId], condition)){
+            result.push(userId);
+        }
+    }
+
+    function matchesFilter(skills, filter) {
+        var result = true;
+        
+        filter.forEach(function (expectedSkill) {
+            result &= hasSkill(expectedSkill, skills);
+        });
+        
+        return result;
+    }
+    
+    function hasSkill(condition, skills) {
+        var sphere = condition.sphere;
+        var result = false;
+
+        skills.forEach(function (elem) {
+            if (elem.sphere === sphere){
+                elem.skills.forEach(function (elem) {
+                    if (elem.name === condition.name && elem.level>=condition.level){
+                        result = true;
+                    }
+                })
+            }
+        });
+        return result;
+    }
+    response.json(result);
 });
