@@ -67,39 +67,26 @@ app.get('/projects', function (request, response) {
 var updateSkillRegexp = /\/skills\/update\/(\d+)/;
 app.post(updateSkillRegexp, function (request, response) {
     var userId = updateSkillRegexp.exec(request.path)[1];
-    var userSkills = data.skills[userId];
-    if (!userSkills) {
-        userSkills = {};
-        data.skills[userId] = userSkills;
-    }
-    function findSphere(sphereName) {
-        var foundSphere = userSkills.filter(function (item) {
-            return item.sphere === sphereName;
-        })[0];
-        if (!foundSphere) {
-            foundSphere = {sphere: sphereName, skills:[]};
-            userSkills.push(foundSphere);
-        }
-        return foundSphere;
-    }
-    function findSkill(skills, name) {
-        var foundSkill = skills.filter(function (item) {
-            return item.name === name;
-        })[0];
-        if (!foundSkill) {
-            foundSkill = {name: name};
-            skills.push(foundSkill);
-        }
-        return foundSkill;
-    }
+    var updateSkills = [];
 
-    request.body.forEach(function (item) {
-        var sphere = findSphere(item.sphere);
-        var skill = findSkill(sphere.skills, item.name);
-        skill.level = item.level + '';
+    request.body.forEach(function (elem) {
+        var sphere = updateSkills.find(function (obj) {
+            return obj.sphere === elem.sphere;
+        });
+
+        var skill = {name: elem.name, level: elem.level};
+        if (!sphere){
+            updateSkills.push({sphere: elem.sphere, skills: [skill]});
+        }else{
+            sphere.skills.push(skill);
+        }
     });
 
-    response.json(userSkills);
+    data.skills[userId] = updateSkills;
+    console.log("тело запроса" + JSON.stringify(request.body));
+    console.log("скилы всех" + JSON.stringify(data.skills));
+
+    response.json(updateSkills);
 });
 
 app.post('/manager/filter', function (request, response) {
@@ -108,8 +95,8 @@ app.post('/manager/filter', function (request, response) {
     var objUserSkills = data.skills;
     var result = [];
 
-    for (var userId in objUserSkills ){
-        if (matchesFilter(objUserSkills[userId], condition)){
+    for (var userId in objUserSkills) {
+        if (matchesFilter(objUserSkills[userId], condition)) {
             result.push(userId);
         }
     }
@@ -129,9 +116,9 @@ app.post('/manager/filter', function (request, response) {
         var result = false;
 
         skills.forEach(function (elem) {
-            if (elem.sphere === sphere){
+            if (elem.sphere === sphere) {
                 elem.skills.forEach(function (elem) {
-                    if (elem.name === condition.name && elem.level>=condition.level){
+                    if (elem.name === condition.name && elem.level >= condition.level) {
                         result = true;
                     }
                 })
@@ -139,6 +126,7 @@ app.post('/manager/filter', function (request, response) {
         });
         return result;
     }
+
     response.json(result);
 });
 
