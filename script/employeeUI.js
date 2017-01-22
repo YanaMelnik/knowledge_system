@@ -36,6 +36,17 @@ function EmployeeComponent(user) {
             success: function (data) {
                 var output = Mustache.render($('#generalEmployee').html(), data);
                 container.find('.container').html(output);
+
+                $('.fbSharing').click(function () {
+                    FB.ui({
+                        method: 'feed',
+                        link: 'http://apple.com',
+                        caption: 'My site knowledge system',
+                        picture: 'http://para.llel.us/themes/goexplore-html/assets/images/logo-symbol-complex-colors.png',
+                        description: 'Description for knowledge system',
+                        name: 'knowledge system'
+                    }, function(response){});
+                });
             },
             dataType: 'json'
         });

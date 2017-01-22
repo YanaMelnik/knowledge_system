@@ -7,6 +7,17 @@
     <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=746559592161697";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="loginComponent" class="template">
     <div class="slider_wrapper">
         <ul class="slider">
@@ -93,7 +104,10 @@
             <span class="job-position">{{job_position}}</span>
             <br>
             <span class="phone">{{phone}}</span>
+            <br>
+            <div class="fbSharing"></div>
         </div>
+
     </div>
     <div class="primary_information">
         <h4 class="primary_header">Primary information</h4>
@@ -116,6 +130,7 @@
             </tr>
         </table>
     </div>
+
 </div>
 <div id="skillsEmployee" class="template">
     <div class="add_new_skills skills"></div>
@@ -307,7 +322,7 @@
             <div class="sphere_type">
                 <h5 class="sphere">{{sphere}}</h5>
                 <ul class="sphere_knowledges">
-                {{#skills}}
+                    {{#skills}}
                     <li class="sphere_knowledge" data-skill-sphere="{{sphere}}" data-skill-name="{{name}}">
                         <span class="sphere_name">{{name}}</span>
                         <div class="sphere_levels">
@@ -316,7 +331,7 @@
                             <span class="level" data-skill-level="2">Advance</span>
                         </div>
                     </li>
-                {{/skills}}
+                    {{/skills}}
                 </ul>
             </div>
             {{/.}}
@@ -328,7 +343,6 @@
     <p class="filter_error">Sorry, nobody matches your filter. Use another combination of filter.</p>
 </div>
 <div id="container"></div>
-
 <div class="loader"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
