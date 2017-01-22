@@ -12,9 +12,6 @@ function RenderTeam() {
             console.log(data);
             render();
         },
-        error: function () {
-            alert('Error');
-        },
         dataType: 'json'
     });
 

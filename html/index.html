@@ -25,9 +25,9 @@
         <div class="centered">
             <img class="logo_index" src="/images/slider_1.png" alt="Logo of company">
             <form>
-                <section class="enter_form__error">
+                <div class="enter_form__error">
                     Login or password is incorrect
-                </section>
+                </div>
                 <input type="text" placeholder="Login" name="login" autofocus tabindex="1" maxlength="25"><br>
                 <input type="password" placeholder="Password" name="password" tabindex="2" maxlength="20"><br>
                 <br><input type="button" class="button" id="enterSite" value="Enter" tabindex="3">
@@ -325,9 +325,11 @@
     </div>
 </div>
 <div id="filterError" class="template">
-    <p class="filterError">Sorry, nobody matches your filter. Use another combination of filter.</p>
+    <p class="filter_error">Sorry, nobody matches your filter. Use another combination of filter.</p>
 </div>
 <div id="container"></div>
+
+<div class="loader"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="/lib/slick.js"></script>
@@ -343,6 +345,7 @@
 <script type="text/javascript" src="/script/skills.js"></script>
 <script type="text/javascript" src="/script/team.js"></script>
 <script type="text/javascript" src="/script/managerFilter.js"></script>
+<script type="text/javascript" src="/script/ajaxEvents.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvrHa8sHTOEGNfEvzbKpXR-Tlgunai8hw&">
 </script>
 

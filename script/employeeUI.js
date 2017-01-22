@@ -37,9 +37,6 @@ function EmployeeComponent(user) {
                 var output = Mustache.render($('#generalEmployee').html(), data);
                 container.find('.container').html(output);
             },
-            error: function () {
-                alert('Error');
-            },
             dataType: 'json'
         });
     }
@@ -55,9 +52,6 @@ function EmployeeComponent(user) {
                 container.find('.container').html($("#contact").html());
 
                 new Map(lat, lng);
-            },
-            error: function () {
-                alert('Error');
             },
             dataType: 'json'
         });

@@ -11,9 +11,6 @@ function Filter(filterCallback) {
             url: '/manager/filter',
             data: JSON.stringify(arrFilter),
             success: filterCallback,
-            error: function () {
-                alert('Error');
-            },
             dataType: 'json',
             contentType: 'application/json'
         });

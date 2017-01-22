@@ -1,0 +1,28 @@
+.filter_error {
+  @include errorMessage;
+  @include container;
+  font-size: 1.5em;
+  text-align: center;
+  width: 95%;
+}
+
+.server_error {
+  @include errorMessage;
+  @include container;
+  font-size: 1.5em;
+  text-align: center;
+  width: 95%;
+  margin-top: 25%;
+
+  @media #{$desktop-widths} {
+    margin-top: 15%;
+  }
+}
+
+.enter_form__error {
+  display: none;
+  @include errorMessage;
+}
+
+
+

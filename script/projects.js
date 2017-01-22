@@ -21,9 +21,6 @@ function Projects() {
                 state.projects = data.projects;
                 render();
             },
-            error: function () {
-                alert('Error');
-            },
             dataType: 'json'
         });
     }

@@ -34,9 +34,6 @@ function ManagerComponent(user) {
                 var output = Mustache.render($('#generalManager').html(), data);
                 container.find('.container').html(output);
             },
-            error: function () {
-                alert('Error');
-            },
             dataType: 'json'
         });
     }
@@ -58,9 +55,6 @@ function ManagerComponent(user) {
                 data.team.forEach(function (elem) {
                     map.addMarker(elem.name, +elem.office.lat, +elem.office.lng);
                 })
-            },
-            error: function () {
-                alert('Error');
             },
             dataType: 'json'
         });

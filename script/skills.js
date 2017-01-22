@@ -5,9 +5,6 @@ function Skills(userId) {
         type: 'GET',
         url: '/employee/' + userId + "/skills",
         success: render,
-        error: function () {
-            alert('Error');
-        },
         dataType: 'json'
     });
 
@@ -30,9 +27,6 @@ function Skills(userId) {
             url: '/skills/update/' + userId,
             success: function (updatedSkills) {
                 render(updatedSkills);
-            },
-            error: function () {
-                alert('Error');
             },
             dataType: 'json',
             contentType: 'application/json',

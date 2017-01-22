@@ -35,11 +35,6 @@
     min-width: 150px;
     width: 60%;
   }
-
-  .enter_form__error {
-    display: none;
-    @include errorMessage;
-  }
 }
 
 @media #{$table-widths} {

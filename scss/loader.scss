@@ -1,0 +1,23 @@
+.fa-spinner {
+  color: $bg-darkgrey;
+  @include container;
+  text-align: center;
+  width: 100%;
+}
+
+#loader {
+  width: 100%;
+}
+
+.loader{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+
+
+

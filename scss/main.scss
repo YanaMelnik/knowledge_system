@@ -1,11 +1,12 @@
 main {
   margin-bottom: 15vw;
+  margin-top: 1%;
 }
 
 
 @media #{$table-widths} {
   main {
-    margin-top: 11%;
+    margin-top: 150px;
     margin-bottom: 11%;
   }
 }

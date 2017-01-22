@@ -15,7 +15,9 @@ $fa-font-path: "/fonts";
 @import "main.scss";
 @import "team.scss";
 @import "template.scss";
-@import "filterError.scss";
+@import "error";
+@import "loader.scss";
+@import "font.scss";
 
 @import "enter_form.scss";
 @import "slider.scss";

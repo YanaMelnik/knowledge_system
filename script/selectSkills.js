@@ -5,9 +5,6 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
         type: 'GET',
         url: '/skills',
         success: render,
-        error: function () {
-            alert('Error');
-        },
         dataType: 'json'
     });
 

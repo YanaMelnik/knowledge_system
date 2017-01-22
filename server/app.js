@@ -102,6 +102,45 @@ app.post(updateSkillRegexp, function (request, response) {
     response.json(userSkills);
 });
 
+app.post('/manager/filter', function (request, response) {
+
+    var condition = request.body;
+    var objUserSkills = data.skills;
+    var result = [];
+
+    for (var userId in objUserSkills ){
+        if (matchesFilter(objUserSkills[userId], condition)){
+            result.push(userId);
+        }
+    }
+
+    function matchesFilter(skills, filter) {
+        var result = true;
+
+        filter.forEach(function (expectedSkill) {
+            result &= hasSkill(expectedSkill, skills);
+        });
+
+        return result;
+    }
+
+    function hasSkill(condition, skills) {
+        var sphere = condition.sphere;
+        var result = false;
+
+        skills.forEach(function (elem) {
+            if (elem.sphere === sphere){
+                elem.skills.forEach(function (elem) {
+                    if (elem.name === condition.name && elem.level>=condition.level){
+                        result = true;
+                    }
+                })
+            }
+        });
+        return result;
+    }
+    response.json(result);
+});
 
 function returnStatic(path, contentType) {
     return function (request, response) {
@@ -150,42 +189,4 @@ app.listen(port, function () {
     console.log("Server has been started on port " + port);
 });
 
-app.post('/manager/filter', function (request, response) {
 
-    var condition = request.body;
-    var objUserSkills = data.skills;
-    var result = [];
-
-    for (var userId in objUserSkills ){
-        if (matchesFilter(objUserSkills[userId], condition)){
-            result.push(userId);
-        }
-    }
-
-    function matchesFilter(skills, filter) {
-        var result = true;
-        
-        filter.forEach(function (expectedSkill) {
-            result &= hasSkill(expectedSkill, skills);
-        });
-        
-        return result;
-    }
-    
-    function hasSkill(condition, skills) {
-        var sphere = condition.sphere;
-        var result = false;
-
-        skills.forEach(function (elem) {
-            if (elem.sphere === sphere){
-                elem.skills.forEach(function (elem) {
-                    if (elem.name === condition.name && elem.level>=condition.level){
-                        result = true;
-                    }
-                })
-            }
-        });
-        return result;
-    }
-    response.json(result);
-});

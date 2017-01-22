@@ -2,7 +2,7 @@
   @include container;
   padding: 1%;
   overflow: hidden;
-  margin-top: 15%;
+  box-sizing: border-box;
 
   .sort, .filter {
     @include buttonQuery;
@@ -10,8 +10,6 @@
     padding: 3%;
     font-weight: bold;
   }
-
-
 
   .worker {
     background-color: $bg-lightgrey;
