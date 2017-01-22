@@ -57,7 +57,12 @@
   @include container;
   position: relative;
   background-color: $bg-blue;
-  z-index: 1000;
+  z-index: 10;
+
+  .profile_menu{
+    background-color: $bg-orange;
+    cursor: pointer;
+  }
 }
 
 .main_nav__toggle {

@@ -57,9 +57,17 @@
     .profile_menu {
       display: none;
       position: absolute;
-      z-index: 10;
+      z-index: 15;
       width: 7%;
       margin-right: 1px;
+      background-color: $bg-orange;
+      cursor: pointer;
+    }
+
+    &:hover {
+      .profile_menu {
+        display: block;
+      }
     }
   }
 

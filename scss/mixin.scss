@@ -26,8 +26,8 @@
 
 @mixin errorMessage {
   box-sizing: border-box;
-  border: 1px solid #ff4e06;
-  color: #ff4e06;
+  border: 1px solid $bg-orange;
+  color: $bg-orange;
   padding: 10px;
   font-size: 0.7em;
   margin: 10px;
@@ -78,67 +78,7 @@
   }
 }
 
-@mixin buttonEcs {
 
-  background: linear-gradient(to bottom, #fe540b 5%, #b40a09 100%);
-  background-color: #770806;
-  width: 2.2vw;
-  height: 2.2vw;
-  position: absolute;
-  min-width: 33px;
-  min-height: 33px;
-  max-width: 53px;
-  max-height: 53px;
-  cursor: pointer;
-
-  &:hover{
-    background: linear-gradient(to bottom, #9d0908 5%, #fe540b 100%);
-    background-color: #770806;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 47%;
-    margin: 0 2px;
-    text-align: center;
-    min-width: 26px;
-    max-width: 48px;
-    width: 2vw;
-    height: 3px;
-
-    background-color: #ffffff;
-  }
-
-  &::before {
-    transform: rotate(45deg);
-    box-shadow: none;
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-
-  @media #{$table-widths} {
-    .esc{
-      top:1%;
-      &::before,
-      &::after {
-        right: 0.3vw;
-      }
-    }
-  }
-
-  @media #{$desktop-widths} {
-    .esc{
-      &::before,
-      &::after {
-        right: 0.1vw;
-      }
-    }
-  }
-}
 
 
 
