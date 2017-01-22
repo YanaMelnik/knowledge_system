@@ -19,5 +19,16 @@ function render() {
     }
 }
 
+function preventParentScroll(selector) {
+    $(selector).on('mousewheel', function (e) {
+        var event = e.originalEvent,
+            d = event.wheelDelta || -event.detail;
+
+        this.scrollTop += ( d < 0 ? 1 : -1 ) * 30;
+        e.preventDefault();
+    });
+}
+
+
 render();
 

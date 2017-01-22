@@ -49,8 +49,9 @@ function Projects() {
         $('#container').find('.fa-times').click(function () {
             preview.empty();
         });
+        preventParentScroll('#container .preview')
 
-    };
+    }
 
     function findProject(projectId) {
         return state.projects.filter(function (project) {

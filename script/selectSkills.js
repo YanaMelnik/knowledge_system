@@ -1,6 +1,5 @@
 function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
     var $container = $('#container');
-    console.log(preselectedSkills);
 
     $.ajax({
         type: 'GET',
@@ -23,6 +22,7 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
         });
         listenForSkillSelection();
         preselect();
+        preventParentScroll('#container .new_skills');
     }
 
     function preselect() {
