@@ -4,12 +4,12 @@ function RenderTeam() {
     var sortOrder = 1;
     var filter = null;
 
+
     $.ajax({
         type: 'GET',
         url: '/employee/3',
         success: function (data) {
             myTeam = data;
-            console.log(data);
             render();
         },
         dataType: 'json'
@@ -23,6 +23,11 @@ function RenderTeam() {
         } else {
             team = myTeam.team;
         }
+
+        team.sort(function (a, b) {
+            return ((b.name < a.name) - (a.name < b.name)) * sortOrder;
+        });
+
         var output = Mustache.render($('#myTeam').html(), team);
         $('#container').find('.container').html(output);
 
@@ -30,16 +35,14 @@ function RenderTeam() {
             $('#container').find('.container').append($('#filterError').html());
         }
 
+
         $('#container').find('.sort').click(function () {
-            team.sort(function (a, b) {
-                return ((b.name < a.name) - (a.name < b.name)) * sortOrder;
-            });
+            sortOrder *= -1;
 
             render();
 
             var sortLabel = sortOrder === 1 ? 'ASC' : 'DESC';
             $('#container').find('.sort').val('Sort by name ' + sortLabel);
-            sortOrder *= -1;
         });
 
         new Filter(function (data) {
