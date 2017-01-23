@@ -33,6 +33,7 @@ function ManagerComponent(user) {
             success: function (data) {
                 var output = Mustache.render($('#generalManager').html(), data);
                 container.find('.container').html(output);
+                $('.profile_photo').attr('src', data.photo);
             },
             dataType: 'json'
         });

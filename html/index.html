@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Knowledge system</title>
     <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
+    <link rel="icon" type="image/png" href="/images/logo/favicon-32x32.png">
 </head>
 <body>
 
@@ -34,7 +35,7 @@
     </div>
     <div class="enter_form">
         <div class="centered">
-            <img class="logo_index" src="/images/slider_1.png" alt="Logo of company">
+            <img class="logo_index" src="/images/logo/logo.png" alt="Logo of company">
             <form>
                 <div class="enter_form__error">
                     Login or password is incorrect
@@ -51,7 +52,7 @@
         <nav>
             <div class="head_nav">
                 <div class="head_nav__wrapper">
-                    <img src="/images/slider_1.png" class="logo" alt="Logo of company">
+                    <img src="/images/logo/logo.png" class="logo" alt="Logo of company">
                     <div class="profile">
                         <img src="/images/slider_1.png" class="profile_photo" id="profile_photo" alt="Your's photo">
                         <ul class="profile_menu">
@@ -106,6 +107,7 @@
             <span class="phone">{{phone}}</span>
             <br>
             <div class="fbSharing"></div>
+            <input type="button" name="download" value="Download CV" class="download">
         </div>
 
     </div>
@@ -215,7 +217,7 @@
         <nav>
             <div class="head_nav">
                 <div class="head_nav__wrapper">
-                    <img src="/images/slider_1.png" class="logo" alt="Logo of company">
+                    <img src="/images/logo/logo.png" class="logo" alt="Logo of company">
                     <div class="profile">
                         <img src="/images/slider_1.png" class="profile_photo" id="profile_photo" alt="Your's photo">
                         <ul class="profile_menu">
@@ -338,6 +340,40 @@
             <input type="button" value="Save Changes" name="Save" class="save_skills">
         </div>
     </div>
+</div>
+<div id="downloadFile" class="template">
+    <table border="1" width="70%" height="90%" align="center">
+        <caption>MY CURRICULUM VITAE</caption>
+        <tr>
+            <td rowspan="3" width="300px" height="300px"><img src="http://localhost:9999{{photo}}"></td>
+            <td>{{name}}</td>
+        </tr>
+        <tr>
+            <td>{{job_position}}</td>
+        </tr>
+        <tr>
+            <td>{{phone}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">PRIMARY INFORMATION</td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td>{{status}}</td>
+        </tr>
+        <tr>
+            <td>Production Category:</td>
+            <td>{{prod_category}}</td>
+        </tr>
+        <tr>
+            <td>Job Function Category:</td>
+            <td>{{job_position}}</td>
+        </tr>
+        <tr>
+            <td>Functional Manager:</td>
+            <td>{{manager}}</td>
+        </tr>
+    </table>
 </div>
 <div id="filterError" class="template">
     <p class="filter_error">Sorry, nobody matches your filter. Use another combination of filter.</p>

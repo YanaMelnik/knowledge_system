@@ -39,6 +39,12 @@ function LoginComponent(loginCallback) {
         });
     }
     container.find('#enterSite').click(doLogin);
+    $('input[type="text"]').keypress(function (e) {
+        var code = e.keyCode || e.which;
+        if(code == 13) {
+            doLogin();
+        }
+    });
 }
 
 
