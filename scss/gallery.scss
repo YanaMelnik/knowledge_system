@@ -146,6 +146,32 @@
   .project:nth-child(2n+1) {
     clear: left;
   }
+
+  .img_big {
+    .img {
+      float: left;
+      width: 75%;
+      box-sizing: border-box;
+      border-bottom: 0;
+
+      .img_project {
+        border-bottom: none;
+      }
+    }
+
+
+
+
+    .project_description {
+      float: right;
+      width: 25%;
+      padding: 3%;
+      text-align: justify;
+      border-left: 3px solid #d1d1d1;
+      box-sizing: border-box;
+
+    }
+  }
 }
 
 @media #{$desktop-widths} {
@@ -159,23 +185,7 @@
     clear: left;
   }
 
-  .img_big {
-    .img {
-      float: left;
-      width: 70%;
-      box-sizing: border-box;
-      border-right: 3px solid #d1d1d1;
-      border-bottom: 0;
-    }
 
-    .project_description {
-      float: right;
-      width: 20%;
-      margin: 3%;
-      text-align: justify;
-
-    }
-  }
 }
 
 .pages {
