@@ -1,11 +1,11 @@
-function LoginComponent(loginCallback) {
+function LoginComponent(loginCallback) {            //constructor for login
 
     var form = $('#loginComponent');
 
     var container = $('#container');
     container.html(form.html());
 
-    $('.slider').slick({
+    $('.slider').slick({            //slider for start page, plugin
         autoplay: true,
         autoplaySpeed: 1500,
         speed: 1200,
@@ -14,7 +14,7 @@ function LoginComponent(loginCallback) {
         pauseOnDotsHover: true
     });
 
-    function doLogin() {
+    function doLogin() {                    //login in, ajax on the server, and validation login password
         container.find('.enter-form').hide();
 
         var login = container.find('input[name="login"]').val();
@@ -38,7 +38,8 @@ function LoginComponent(loginCallback) {
             contentType: 'application/json'
         });
     }
-    container.find('#enterSite').click(doLogin);
+
+    container.find('#enterSite').click(doLogin);  //what to do when i click or press "enter"
     $('input[type="text"]').keypress(function (e) {
         var code = e.keyCode || e.which;
         if(code == 13) {

@@ -32,13 +32,15 @@ app.post('/login', function (request, response) {
 var detailRegexp = /\/employee\/(\d+)$/;
 app.get(detailRegexp, function (request, response) {
     var employeeId = detailRegexp.exec(request.path)[1];
-    var userData = data['userDetails'][employeeId];
+    var userData = data.userDetails[employeeId];
     if (userData) {
         response.json(userData);
         return;
     }
     response.status(404).send('User not found')
 });
+
+
 
 
 var skillsRegexp = /\/employee\/(\d+)\/skills/;
@@ -83,9 +85,6 @@ app.post(updateSkillRegexp, function (request, response) {
     });
 
     data.skills[userId] = updateSkills;
-    console.log("тело запроса" + JSON.stringify(request.body));
-    console.log("скилы всех" + JSON.stringify(data.skills));
-
     response.json(updateSkills);
 });
 

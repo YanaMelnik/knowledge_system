@@ -5,17 +5,19 @@ main {
 
 
 @media #{$table-widths} {
-  main {
+  main{
     margin-top: 150px;
     margin-bottom: 11%;
   }
 }
 
 @media #{$desktop-widths} {
-  main {
+  main{
     margin-top: 170px;
     margin-bottom: 5vw;
   }
 }
+
+
 
 

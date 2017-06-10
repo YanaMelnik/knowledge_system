@@ -1,12 +1,12 @@
 var state = {
     currentComponent: 'loginComponent',
-    userRole: undefined,
-    user: undefined
+    userRole: null,
+    user: null
 };
 
-function render() {
+function render() {                                     //render component on the page, based on role
     if (state.currentComponent === 'loginComponent') {
-        new LoginComponent(function (user) {
+        new LoginComponent(function (user) {            //loginCallback
             state.role = user.role;
             state.user = user;
             if(state.role==="employee"){

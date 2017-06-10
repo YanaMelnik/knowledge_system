@@ -36,7 +36,7 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
                     sphereTree[skill.name] = skill.level;
                 })
             });
-            console.log(skillsTree);
+            // console.log(skillsTree);
             $(selector).find('.sphere_knowledge').each(function (index, item) {
                 var $item = $(item);
                 var sphere = $item.data('skill-sphere');
