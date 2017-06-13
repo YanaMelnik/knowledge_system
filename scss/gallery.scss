@@ -188,6 +188,35 @@
 
 }
 
+.counter_per_page {
+  list-style: none;
+  text-align: right;
+  font-size: 15px;
+  padding-left: 0;
+  padding-right: 10px;
+
+  span {
+    padding-right: 5%;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 22px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .counter_active {
+    a {
+      text-decoration: underline;
+      color: #197598;
+      font-weight: bold;
+    }
+  }
+}
+
 .pages {
   list-style: none;
   text-align: center;

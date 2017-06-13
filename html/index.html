@@ -6,6 +6,12 @@
     <title>Knowledge system</title>
     <link rel="stylesheet" type="text/css" href="/stylesheet/style.css">
     <link rel="icon" type="image/png" href="/images/logo/favicon-32x32.png">
+
+
+    <script src="//cdn.polyfill.io/v1/polyfill.js?features=es6"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -41,8 +47,8 @@
                 <div class="enter_form__error">
                     Login or password is incorrect
                 </div>
-                <input type="text" placeholder="Login" name="login" autofocus tabindex="1" maxlength="25"><br>
-                <input type="password" placeholder="Password" name="password" tabindex="2" maxlength="20"><br>
+                <input class="js_login" type="text" placeholder="Login" name="login" autofocus tabindex="1" maxlength="25"><br>
+                <input class="js_login" type="password" placeholder="Password" name="password" tabindex="2" maxlength="20"><br>
                 <br><input type="button" class="button" id="enterSite" value="Enter" tabindex="3">
             </form>
         </div>
@@ -167,6 +173,12 @@
 <div id="galleryEmployee" class="template">
     <div class="gallery">
         <h4 class="gallery_header">My projects</h4>
+        <ul class="counter_per_page">
+            <span>Projects per page</span>
+            <li class="count_per_page counter_active" data-count-per-page="6"><a href="javascript:void(0)">6</a></li>
+            <li class="count_per_page" data-count-per-page="12"><a href="javascript:void(0)">12</a></li>
+            <li class="count_per_page" data-count-per-page="18"><a href="javascript:void(0)">18</a></li>
+        </ul>
         <ul class="gallery_projects">
             {{#projects}}
             <li class="project" data-project-id="{{id}}">

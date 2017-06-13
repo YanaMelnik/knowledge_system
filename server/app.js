@@ -20,7 +20,7 @@ var users = {
     }
 };
 
-app.post('/login', function (request, response) {
+app.post('/login', function (request, response) {                           // request handling for login
     var user = users[request.body.login + ":" + request.body.password];
     if (user) {
         response.json(user);
@@ -29,7 +29,7 @@ app.post('/login', function (request, response) {
     response.status(404).send("User not found");
 });
 
-var detailRegexp = /\/employee\/(\d+)$/;
+var detailRegexp = /\/employee\/(\d+)$/;                        //request handling for employee information
 app.get(detailRegexp, function (request, response) {
     var employeeId = detailRegexp.exec(request.path)[1];
     var userData = data.userDetails[employeeId];
@@ -41,9 +41,7 @@ app.get(detailRegexp, function (request, response) {
 });
 
 
-
-
-var skillsRegexp = /\/employee\/(\d+)\/skills/;
+var skillsRegexp = /\/employee\/(\d+)\/skills/;                 //request handling for employee skills (skills.json)
 app.get(skillsRegexp, function (request, response) {
     var employeeId = skillsRegexp.exec(request.path)[1];
     var userData = data['skills'][employeeId];
@@ -54,16 +52,29 @@ app.get(skillsRegexp, function (request, response) {
     response.status(404).send('User not found')
 });
 
-app.get('/skills', function (request, response) {
+app.get('/skills', function (request, response) {           //request handling for all skills (allSkills.json)
     response.json(data.allSkills);
 });
 
 app.get('/projects', function (request, response) {
     var page = request.query.page;
+    var countPerPage = request.query.countperpage;
+    var pages = Math.ceil(data.projects.length / countPerPage);
+
     if (!page) {
         page = 1;
+    } else if (page > pages){
+        page = pages;
     }
-    response.sendFile(__dirname + '/projects_page_' + page + '.json');
+
+    var projects = data.projects.slice(countPerPage * (page - 1), countPerPage * page);
+
+    var answer = {
+        projects: projects,
+        page: page,
+        pages: pages
+    };
+    response.json(answer);
 });
 
 var updateSkillRegexp = /\/skills\/update\/(\d+)/;
@@ -77,9 +88,9 @@ app.post(updateSkillRegexp, function (request, response) {
         });
 
         var skill = {name: elem.name, level: elem.level};
-        if (!sphere){
+        if (!sphere) {
             updateSkills.push({sphere: elem.sphere, skills: [skill]});
-        }else{
+        } else {
             sphere.skills.push(skill);
         }
     });
@@ -163,7 +174,8 @@ function initDataFromJson(varName, jsonPath) {
 initData([
     {variable: "userDetails", json: '/user_details.json'},
     {variable: "skills", json: '/skills.json'},
-    {variable: "allSkills", json: '/allSkills.json'}
+    {variable: "allSkills", json: '/allSkills.json'},
+    {variable: "projects", json: '/projects.json'}
 ]);
 
 app.use(express.static(__dirname + '/../'));

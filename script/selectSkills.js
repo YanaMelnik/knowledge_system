@@ -10,14 +10,14 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
 
     function render(allSkills) {
         var output = Mustache.render($("#skills").html(), allSkills);
-        $(selector).html(output);
+        $(selector).html(output);                           //open window "add skills"
         $('.new_skills').click(function (evt) {
             evt.stopPropagation();
         });
-        $container.find('.dark_background').click(function () {
+        $container.find('.dark_background').click(function () {     //listener for close window (background click)
             $(selector).empty();
         });
-        $container.find('.fa-times').click(function () {
+        $container.find('.fa-times').click(function () {            //listener for close window (close btn click)
             $(selector).empty();
         });
         listenForSkillSelection();
@@ -26,7 +26,7 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
     }
 
     function preselect() {
-        if (preselectedSkills) {
+        if (preselectedSkills) {                //skillTree population, prevent information from json
             var skillsTree = {};
             preselectedSkills.forEach(function (sphere) {
                 var sphereTree = {};
@@ -36,8 +36,8 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
                     sphereTree[skill.name] = skill.level;
                 })
             });
-            // console.log(skillsTree);
-            $(selector).find('.sphere_knowledge').each(function (index, item) {
+
+            $(selector).find('.sphere_knowledge').each(function (index, item) {     //skillTree for window "add skills"
                 var $item = $(item);
                 var sphere = $item.data('skill-sphere');
                 var skill = $item.data('skill-name');
@@ -62,7 +62,7 @@ function selectSkills(selector, skillsModificationCallback, preselectedSkills) {
             });
         }
 
-        $container.find('.new_skills .level').click(function () {
+        $container.find('.new_skills .level').click(function () {       //remove old skill and add new skill
             var selectedSkill = extractSelectedSkill(this);
             var index = skillsArray.findIndex(function (item) {
                 if (item.sphere === selectedSkill.sphere && item.name === selectedSkill.name) {

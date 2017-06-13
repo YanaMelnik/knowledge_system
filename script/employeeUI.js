@@ -3,15 +3,16 @@ function EmployeeComponent(user) {
     var employee = $('#employeeComponent');
     var state = {currentPage: "general"};
 
-    container.html(employee.html());
+    container.html(employee.html());        //employee scheme rendering
 
     render();
-    new MenuComponent(function (menuItem) {
+
+    new MenuComponent(function (menuItem) {     //sets current page of menu
         state.currentPage = menuItem;
         render();
     });
 
-    function render() {
+    function render() {             //rendering of the active page
         switch (state.currentPage) {
             case 'general':
                 renderGeneral();
@@ -59,7 +60,7 @@ function EmployeeComponent(user) {
         });
     }
 
-    function download(data, filename, type) {
+    function download(data, filename, type) {           //save file
         var a = document.createElement("a"),
             file = new Blob([data], {type: type});
         if (window.navigator.msSaveOrOpenBlob) // IE10+

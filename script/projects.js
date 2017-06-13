@@ -1,6 +1,7 @@
 function Projects() {
     var state = {
         currentPageNumber: undefined,
+        pageCount: 6,
         projects: [],
         pages: undefined
     };
@@ -8,9 +9,9 @@ function Projects() {
     getProjects();
 
     function getProjects() {
-        var url = '/projects';
+        var url = '/projects?countperpage=' + state.pageCount;
         if (state.currentPageNumber) {
-            url += '?page=' + state.currentPageNumber;
+            url += '&page=' + state.currentPageNumber;
         }
         $.ajax({
             type: 'GET',
@@ -79,9 +80,14 @@ function Projects() {
         var output = Mustache.render($('#galleryEmployee').html(), state);
         $('#container .container').html(output);
         highlightCurrentPage();
+        highlightCurrentCounter()
 
         $('.gallery_page').click(function () {
             changePage(+$(this).data('page'));
+        });
+
+        $('.count_per_page').click(function () {
+            changeCount(+$(this).data('count-per-page'));
         });
 
         $('.project').click(function () {
@@ -89,14 +95,26 @@ function Projects() {
         })
     }
 
+    function highlightCurrentCounter() {
+        $('.count_per_page').removeClass('counter_active');
+        $('.count_per_page[data-count-per-page="' + state.pageCount + '"]').addClass('counter_active');
+    }
+
     function highlightCurrentPage() {
         $('.gallery_page').removeClass('page_active');
         $('.gallery_page[data-page="' + state.currentPageNumber + '"]').addClass('page_active');
     }
 
+    function changeCount(count) {
+        if (count !== state.pageCount) {
+            state.pageCount = count;
+        }
+        getProjects();
+    }
+
     function changePage(page) {
         if (page !== state.currentPageNumber) {
-            state.currentPageNumber = page
+            state.currentPageNumber = page;
         }
         getProjects();
     }

@@ -7,7 +7,7 @@ var state = {
 function render() {                                     //render component on the page, based on role
     if (state.currentComponent === 'loginComponent') {
         new LoginComponent(function (user) {            //loginCallback
-            state.role = user.role;
+            state.role = user.role;                     //return role and id of current user
             state.user = user;
             if(state.role==="employee"){
                 new EmployeeComponent(user);

@@ -40,8 +40,9 @@ function LoginComponent(loginCallback) {            //constructor for login
     }
 
     container.find('#enterSite').click(doLogin);  //what to do when i click or press "enter"
-    $('input[type="text"]').keypress(function (e) {
+    $('input[class="js_login"]').keypress(function (e) {
         var code = e.keyCode || e.which;
+        console.log(e);
         if(code == 13) {
             doLogin();
         }
